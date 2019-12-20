@@ -1,0 +1,62 @@
+2019-12-18 01:28:49,352 - PIL.Image - DEBUG - Importing BlpImagePlugin
+2019-12-18 01:28:49,354 - PIL.Image - DEBUG - Importing BmpImagePlugin
+2019-12-18 01:28:49,357 - PIL.Image - DEBUG - Importing BufrStubImagePlugin
+2019-12-18 01:28:49,357 - PIL.Image - DEBUG - Importing CurImagePlugin
+2019-12-18 01:28:49,358 - PIL.Image - DEBUG - Importing DcxImagePlugin
+2019-12-18 01:28:49,359 - PIL.Image - DEBUG - Importing DdsImagePlugin
+2019-12-18 01:28:49,360 - PIL.Image - DEBUG - Importing EpsImagePlugin
+2019-12-18 01:28:49,404 - PIL.Image - DEBUG - Importing FitsStubImagePlugin
+2019-12-18 01:28:49,405 - PIL.Image - DEBUG - Importing FliImagePlugin
+2019-12-18 01:28:49,406 - PIL.Image - DEBUG - Importing FpxImagePlugin
+2019-12-18 01:28:49,412 - PIL.Image - DEBUG - Importing FtexImagePlugin
+2019-12-18 01:28:49,413 - PIL.Image - DEBUG - Importing GbrImagePlugin
+2019-12-18 01:28:49,413 - PIL.Image - DEBUG - Importing GifImagePlugin
+2019-12-18 01:28:49,415 - PIL.Image - DEBUG - Importing GribStubImagePlugin
+2019-12-18 01:28:49,416 - PIL.Image - DEBUG - Importing Hdf5StubImagePlugin
+2019-12-18 01:28:49,416 - PIL.Image - DEBUG - Importing IcnsImagePlugin
+2019-12-18 01:28:49,419 - PIL.Image - DEBUG - Importing IcoImagePlugin
+2019-12-18 01:28:49,421 - PIL.Image - DEBUG - Importing ImImagePlugin
+2019-12-18 01:28:49,422 - PIL.Image - DEBUG - Importing ImtImagePlugin
+2019-12-18 01:28:49,424 - PIL.Image - DEBUG - Importing IptcImagePlugin
+2019-12-18 01:28:49,424 - PIL.Image - DEBUG - Importing JpegImagePlugin
+2019-12-18 01:28:49,436 - PIL.Image - DEBUG - Importing Jpeg2KImagePlugin
+2019-12-18 01:28:49,436 - PIL.Image - DEBUG - Importing McIdasImagePlugin
+2019-12-18 01:28:49,437 - PIL.Image - DEBUG - Importing MicImagePlugin
+2019-12-18 01:28:49,438 - PIL.Image - DEBUG - Importing MpegImagePlugin
+2019-12-18 01:28:49,438 - PIL.Image - DEBUG - Importing MpoImagePlugin
+2019-12-18 01:28:49,439 - PIL.Image - DEBUG - Importing MspImagePlugin
+2019-12-18 01:28:49,440 - PIL.Image - DEBUG - Importing PalmImagePlugin
+2019-12-18 01:28:49,441 - PIL.Image - DEBUG - Importing PcdImagePlugin
+2019-12-18 01:28:49,441 - PIL.Image - DEBUG - Importing PcxImagePlugin
+2019-12-18 01:28:49,442 - PIL.Image - DEBUG - Importing PdfImagePlugin
+2019-12-18 01:28:49,467 - PIL.Image - DEBUG - Importing PixarImagePlugin
+2019-12-18 01:28:49,467 - PIL.Image - DEBUG - Importing PngImagePlugin
+2019-12-18 01:28:49,468 - PIL.Image - DEBUG - Importing PpmImagePlugin
+2019-12-18 01:28:49,468 - PIL.Image - DEBUG - Importing PsdImagePlugin
+2019-12-18 01:28:49,469 - PIL.Image - DEBUG - Importing SgiImagePlugin
+2019-12-18 01:28:49,470 - PIL.Image - DEBUG - Importing SpiderImagePlugin
+2019-12-18 01:28:49,470 - PIL.Image - DEBUG - Importing SunImagePlugin
+2019-12-18 01:28:49,471 - PIL.Image - DEBUG - Importing TgaImagePlugin
+2019-12-18 01:28:49,472 - PIL.Image - DEBUG - Importing TiffImagePlugin
+2019-12-18 01:28:49,472 - PIL.Image - DEBUG - Importing WebPImagePlugin
+2019-12-18 01:28:49,473 - PIL.Image - DEBUG - Importing WmfImagePlugin
+2019-12-18 01:28:49,474 - PIL.Image - DEBUG - Importing XbmImagePlugin
+2019-12-18 01:28:49,477 - PIL.Image - DEBUG - Importing XpmImagePlugin
+2019-12-18 01:28:49,478 - PIL.Image - DEBUG - Importing XVThumbImagePlugin
+2019-12-18 01:28:54,966 - root - INFO - url的xml文件有字段为空！！！
+2019-12-18 01:28:54,971 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2019-12-18 01:28:54,975 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/sec_get_event_list?eid=&name= HTTP/1.1" 301 0
+2019-12-18 01:28:54,982 - urllib3.connectionpool - DEBUG - Resetting dropped connection: 127.0.0.1
+2019-12-18 01:28:55,114 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/sec_get_event_list/?eid=&name= HTTP/1.1" 200 46
+2019-12-18 01:29:31,268 - root - INFO - test_get_event_list_auth_error - Code:10012 - msg:user auth fail
+2019-12-18 01:30:31,997 - root - INFO - url的xml文件有字段为空！！！
+2019-12-18 01:30:32,001 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2019-12-18 01:30:32,003 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/sec_get_event_list?eid=&name= HTTP/1.1" 301 0
+2019-12-18 01:30:32,008 - urllib3.connectionpool - DEBUG - Resetting dropped connection: 127.0.0.1
+2019-12-18 01:30:32,168 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/sec_get_event_list/?eid=&name= HTTP/1.1" 200 74
+2019-12-18 01:30:46,946 - root - INFO - test_get_event_list_eid_null - Code:10021 - msg:参数不能都为空
+2019-12-18 01:30:56,563 - root - INFO - url的xml文件有字段为空！！！
+2019-12-18 01:30:56,567 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2019-12-18 01:30:56,579 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/sec_get_event_list?eid=1&name= HTTP/1.1" 301 0
+2019-12-18 01:30:56,584 - urllib3.connectionpool - DEBUG - Resetting dropped connection: 127.0.0.1
+2019-12-18 01:30:56,781 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/sec_get_event_list/?eid=1&name= HTTP/1.1" 200 212
