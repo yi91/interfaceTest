@@ -44,7 +44,7 @@ class GetEventListTest(unittest.TestCase):
         print("1、请求的地址：" + self.url)
 
         # 2、set headers
-        self.header = {'authorization': commondef.my_base64(self.auth)}
+        self.header = {'authorization': 'Basic '+commondef.my_base64(self.auth)}
         localConfigHttp.set_headers(self.header)
         print("2、设置header：" + str(self.header))
 
