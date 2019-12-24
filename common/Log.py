@@ -61,14 +61,14 @@ class Log:
         :param msg:
         :return:
         """
-        self.logger.info(case_name+" - Code:"+code+" - msg:"+msg)
+        self.logger.info(case_name+" - Code:"+str(code)+" - msg:"+msg)
 
     def get_report_path(self):
         """
         get report file path
         :return:
         """
-        report_path = os.path.join(logPath, "report.template_pages")
+        report_path = os.path.join(logPath, "report.html")
         return report_path
 
     def get_result_path(self):

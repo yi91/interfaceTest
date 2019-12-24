@@ -73,7 +73,7 @@ class Login(unittest.TestCase):
             # set headers
             header = {"token": str(token)}
             configHttp.set_headers(header)
-            print("第二步：设置header(token等)")
+            print("第二步：设置header(token等)" + self.headers)
 
         elif self.token == '1':
             pass
@@ -81,7 +81,7 @@ class Login(unittest.TestCase):
         # set params
         data = {}
         configHttp.set_data(data)
-        print("第三步：设置发送请求的参数")
+        print("第三步：设置发送请求的参数" + self.data)
 
         # test interface
         if self.method == 'get':

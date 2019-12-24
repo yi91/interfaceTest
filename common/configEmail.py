@@ -28,7 +28,7 @@ class Email:
 
         # get receiver list
         self.value = localReadConfig.get_email("receiver")
-        self.receivers = []
+        self.receivers = [sender]
         for n in str(self.value).split("/"):
             self.receivers.append(n)
 
@@ -47,7 +47,7 @@ class Email:
         """
         self.msg['subject'] = self.subject
         self.msg['from'] = sender
-        self.msg['to'] = ";".join(self.receiver)
+        self.msg['to'] = ";".join(self.receivers)
 
     def config_content(self):
         """
@@ -57,9 +57,9 @@ class Email:
         f = open(os.path.join(readConfig.proDir, 'testFile', 'emailStyle.txt'))
         content = f.read()
         f.close()
-        content_plain = MIMEText(content, 'template_pages', 'UTF-8')
+        content_plain = MIMEText(content, 'html', 'UTF-8')
         self.msg.attach(content_plain)
-        self.config_image()
+        # self.config_image()
 
     def config_image(self):
         """
@@ -166,4 +166,4 @@ class MyEmail:
 
 
 if __name__ == "__main__":
-    email = MyEmail.get_email()
+    Email().send_email()

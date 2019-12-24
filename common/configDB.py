@@ -36,9 +36,9 @@ class MyDB:
         :return:
         """
         try:
-            # connect to DB
+            # 打开数据库连接
             self.db = pymysql.connect(**config)
-            # create cursor
+            # 使用 cursor() 方法创建一个游标对象 cursor
             self.cursor = self.db.cursor()
             print("Connect DB successfully!")
         except ConnectionError as ex:
@@ -52,15 +52,16 @@ class MyDB:
         :return:
         """
         self.connectDB()
-        # executing sql
+        # 使用 execute()方法执行SQL查询，多个参数传入时需要用集合形式，list或者tuple等
         self.cursor.execute(sql, params)
-        # executing by committing to DB
+        # 手动提交执行
         self.db.commit()
+        # 返回游标对象
         return self.cursor
 
     def get_all(self, cursor):
         """
-        get all result after execute sql
+        获取所有记录列表
         :param cursor:
         :return:
         """
@@ -69,7 +70,7 @@ class MyDB:
 
     def get_one(self, cursor):
         """
-        get one result after execute sql
+        使用 fetchone() 方法获取单条数据
         :param cursor:
         :return:
         """

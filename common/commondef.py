@@ -8,6 +8,7 @@ from xml.etree import ElementTree
 import common.configHttp as configHttp
 from common.Log import MyLog as Log
 import json
+import base64
 
 localReadConfig = readConfig.ReadConfig()
 proDir = readConfig.proDir
@@ -15,7 +16,13 @@ localConfigHttp = configHttp.ConfigHttp()
 log = Log.get_log()
 logger = log.get_logger()
 
-caseNo = 0
+
+def my_base64(string):
+    """ 定义auth的加密方法
+    base64.b64encode(string.encode('utf-8'))得到的是byte类型str，b'YWJjcjM0cjM0NHI='
+    只想要获得YWJjcjM0cjM0NHI=，再将byte转换回去就好了
+    """
+    return str(base64.b64encode(string.encode('utf-8')), 'utf-8')
 
 
 def get_visitor_token():
@@ -63,9 +70,9 @@ def show_return_msg(response):
     """
     url = response.url
     msg = response.text
-    print("\n请求地址：" + url)
+    print("\nresponse：\n请求地址：" + url)
     # 可以显示中文
-    print("\n请求返回值：" + '\n' + json.dumps(json.loads(msg), ensure_ascii=False, sort_keys=True, indent=4))
+    print("请求返回值：" + '\n' + json.dumps(json.loads(msg), ensure_ascii=False, sort_keys=True, indent=4)+'\n')
 
 
 # ****************************** 从excel文件中读取测试用例 ********************************
@@ -87,19 +94,19 @@ def get_xls(xls_name, sheet_name):
     for i in range(nrows):
         # 如果不是标题行，就加入到列表
         if sheet.row_values(i)[0] != u'case_name':
+            # 如果是表格内容是文本格式，得到的就是str，数字格式得到的就是float
             cls.append(sheet.row_values(i))
     return cls
 
 
 # ****************************** 从xml文件中读取sql语句 ********************************
-database = {}
-
-
 def set_xml():
     """
-    set sql xml
+    获取所有的数据库、表信息并转成字典格式
     :return:
     """
+    database = {}
+
     if len(database) == 0:
         sql_path = os.path.join(proDir, "testFile", "SQL.xml")
         tree = ElementTree.parse(sql_path)
@@ -107,40 +114,42 @@ def set_xml():
             db_name = db.get("name")
             # print(db_name)
             table = {}
-            for tb in db.getchildren():
+            for tb in list(db):
                 table_name = tb.get("name")
                 # print(table_name)
                 sql = {}
-                for data in tb.getchildren():
+                for data in list(tb):
                     sql_id = data.get("id")
                     # print(sql_id)
                     sql[sql_id] = data.text
                 table[table_name] = sql
             database[db_name] = table
+    return database
 
 
 def get_xml_dict(database_name, table_name):
     """
-    get db dict by given name
+    获取指定数据库和指定表的所有集合
     :param database_name:
     :param table_name:
     :return:
     """
-    set_xml()
-    database_dict = database.get(database_name).get(table_name)
-    return database_dict
+    database = set_xml()
+    sqls_dic = database.get(database_name).get(table_name)
+    # 返回所有的sql
+    return sqls_dic
 
 
 def get_sql(database_name, table_name, sql_id):
     """
-    get sql by given name and sql_id
+    通过name和id获取指定的sql
     :param database_name:
     :param table_name:
     :param sql_id:
     :return:
     """
-    db = get_xml_dict(database_name, table_name)
-    sql = db.get(sql_id)
+    sqls_dic = get_xml_dict(database_name, table_name)
+    sql = sqls_dic.get(sql_id)
     return sql
 
 
@@ -174,5 +183,5 @@ def get_url_from_xml(name):
 
 
 if __name__ == "__main__":
-    # print(get_xls("userCase.xlsx", 'login'))
-    print(get_url_from_xml('bloglogin'))
+    print(get_xls("apiCase.xlsx", 'sec_get_event_list'))
+    # print(get_url_from_xml('bloglogin'))

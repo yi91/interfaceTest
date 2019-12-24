@@ -4,32 +4,32 @@
     <database name="guest">
 
         <table name="sign_event">
+
             <sql id="sec_get_event_list">
                 SELECT * FROM sign_event WHERE id=%s or name=%s
             </sql>
-        </table>
 
-        <table name="sign_event">
             <sql id="add_event">
                 INSERT INTO sign_event(`id`, `name`, `limit`, `status`, `address`, `start_time`, `create_time`) VALUES (%s, %s, %s, %s, %s, %s, %s)
             </sql>
         </table>
+
 
     </database>
 
     <database name="test">
 
         <table name="testtable">
+
             <sql id="select_member">
                 SELECT * FROM rs_member_wallet_bill WHERE member_id=%s
             </sql>
-        </table>
 
-        <table name="testtable">
             <sql id="delete_user">
                 DELETE FROM rs_member WHERE email=%s
             </sql>
         </table>
+
 
     </database>
 </page>
