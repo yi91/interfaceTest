@@ -51,13 +51,13 @@ class Email:
 
     def config_content(self):
         """
-        write the content of email
+        邮件添加正文内容，MIMEText()用于定义邮件正文，参数为内容的格式
         :return:
         """
-        f = open(os.path.join(readConfig.proDir, 'testFile', 'emailStyle.txt'))
-        content = f.read()
-        f.close()
-        content_plain = MIMEText(content, 'html', 'UTF-8')
+        # with open(os.path.join(readConfig.proDir, 'testFile', 'emailStyle.txt')) as f:
+        #     content = f.read()
+        # content_plain = MIMEText(content, 'html', 'utf-8')
+        content_plain = MIMEText('测试报告，请查收...', 'plain', 'utf-8')
         self.msg.attach(content_plain)
         # self.config_image()
 
@@ -89,13 +89,12 @@ class Email:
 
     def config_file(self):
         """
-        config email file
+        构造附件
         :return:
         """
 
         # if the file content is not null, then config the email file
         if self.check_file():
-
             reportpath = self.log.get_result_path()
             zippath = os.path.join(readConfig.proDir, "result", "test.zip")
 
@@ -134,15 +133,14 @@ class Email:
         self.config_file()
         try:
             # host可以是qq或者163的服务器地址，端口一般默认465，smtplib.SMTP_SSL(host, port)
-            smtp = smtplib.SMTP()
-            smtp.connect(host)
+            smtp = smtplib.SMTP_SSL('smtp.163.com', 465)
             # password必须是授权码
             smtp.login(user, password)
             smtp.sendmail(sender, self.receivers, self.msg.as_string())
             smtp.quit()
             self.logger.info("The test report has send to developer by email.")
         except Exception as ex:
-            self.logger.error(str(ex))
+            self.logger.error(ex.args)
 
 
 class MyEmail:

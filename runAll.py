@@ -97,6 +97,7 @@ class AllTest:
             # send test report by email
             if on_off == 'on':
                 self.email.send_email()
+                print('\n邮件发送成功！')
             elif on_off == 'off':
                 logger.info("Doesn't send report email to developer.")
             else:
