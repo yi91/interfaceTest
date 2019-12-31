@@ -219,9 +219,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>Test Report</h1>
-<p class='attribute'><strong>Start Time:</strong> 2019-12-31 16:18:16</p>
-<p class='attribute'><strong>Duration:</strong> 0:00:04.279287</p>
-<p class='attribute'><strong>Status:</strong> Pass 8</p>
+<p class='attribute'><strong>Start Time:</strong> 2019-12-31 16:41:53</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:09.044022</p>
+<p class='attribute'><strong>Status:</strong> Pass 13</p>
 
 <p class='description'>Test Description</p>
 </div>
@@ -263,7 +263,7 @@ function showOutput(id, name) {
 </tr>
 
 <tr class='passClass'>
-    <td>paramunittest.SecAddEvntTest_0</td>
+    <td>paramunittest.GetEventListTest_0</td>
     <td>1</td>
     <td>1</td>
     <td>0</td>
@@ -272,7 +272,7 @@ function showOutput(id, name) {
 </tr>
 
 <tr id='pt1.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_sec_add_event</div></td>
+    <td class='none'><div class='testcase'>test_get_event_list</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -286,7 +286,294 @@ function showOutput(id, name) {
         </div>
         <pre>
         
-pt1.1: test_sec_add_event_sign_null
+pt1.1: test_get_event_list_auth_null
+
+
+1、请求的地址：http://127.0.0.1:8000/api/sec_get_event_list/
+2、设置header：{'authorization': 'Basic '}
+3、发送请求的参数：{'eid': '', 'name': ''}
+4、发送请求的方法：get
+
+response：
+请求地址：http://127.0.0.1:8000/api/sec_get_event_list/?eid=&amp;name=
+请求返回值：
+{
+    "message": "user auth null",
+    "status": 10011
+}
+
+5、检查结果
+测试结束，输出log完结
+
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>paramunittest.GetEventListTest_1</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_event_list</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+        pass</a>
+
+    <div id='div_pt2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.1: test_get_event_list_auth_error
+
+
+1、请求的地址：http://127.0.0.1:8000/api/sec_get_event_list/
+2、设置header：{'authorization': 'Basic MTIzNDU='}
+3、发送请求的参数：{'eid': '', 'name': ''}
+4、发送请求的方法：get
+
+response：
+请求地址：http://127.0.0.1:8000/api/sec_get_event_list/?eid=&amp;name=
+请求返回值：
+{
+    "message": "user auth fail",
+    "status": 10012
+}
+
+5、检查结果
+测试结束，输出log完结
+
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>paramunittest.GetEventListTest_2</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_event_list</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
+        pass</a>
+
+    <div id='div_pt3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.1: test_get_event_list_eid_null
+
+
+1、请求的地址：http://127.0.0.1:8000/api/sec_get_event_list/
+2、设置header：{'authorization': 'Basic YWRtaW46YWRtaW4xMjM0NTY='}
+3、发送请求的参数：{'eid': '', 'name': ''}
+4、发送请求的方法：get
+
+response：
+请求地址：http://127.0.0.1:8000/api/sec_get_event_list/?eid=&amp;name=
+请求返回值：
+{
+    "message": "参数不能都为空",
+    "status": 10021
+}
+
+5、检查结果
+测试结束，输出log完结
+
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>paramunittest.GetEventListTest_3</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c4',1)">Detail</a></td>
+</tr>
+
+<tr id='pt4.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_event_list</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
+        pass</a>
+
+    <div id='div_pt4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.1: test_get_event_list_eid_success
+
+
+1、请求的地址：http://127.0.0.1:8000/api/sec_get_event_list/
+2、设置header：{'authorization': 'Basic YWRtaW46YWRtaW4xMjM0NTY='}
+3、发送请求的参数：{'eid': '1', 'name': ''}
+4、发送请求的方法：get
+
+response：
+请求地址：http://127.0.0.1:8000/api/sec_get_event_list/?eid=1&amp;name=
+请求返回值：
+{
+    "data": {
+        "address": "北京会展中心",
+        "limit": 2000,
+        "name": "红米Pro发布会",
+        "start_time": "2017-08-20T14:00:00Z",
+        "status": true
+    },
+    "message": "success",
+    "status": 200
+}
+
+Connect DB successfully!
+查询数据库成功
+Database closed!
+5、检查结果
+测试结束，输出log完结
+
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>paramunittest.GetEventListTest_4</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c5',1)">Detail</a></td>
+</tr>
+
+<tr id='pt5.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_get_event_list</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.1')" >
+        pass</a>
+
+    <div id='div_pt5.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.1: test_get_event_list_name_success
+
+
+1、请求的地址：http://127.0.0.1:8000/api/sec_get_event_list/
+2、设置header：{'authorization': 'Basic YWRtaW46YWRtaW4xMjM0NTY='}
+3、发送请求的参数：{'eid': '', 'name': '小米5发布会'}
+4、发送请求的方法：get
+
+response：
+请求地址：http://127.0.0.1:8000/api/sec_get_event_list/?eid=&amp;name=%E5%B0%8F%E7%B1%B35%E5%8F%91%E5%B8%83%E4%BC%9A
+请求返回值：
+{
+    "data": [
+        {
+            "address": "北京国家会议中心",
+            "limit": 2000,
+            "name": "小米5发布会",
+            "start_time": "2017-08-20T14:00:00Z",
+            "status": true
+        }
+    ],
+    "message": "success",
+    "status": 200
+}
+
+Connect DB successfully!
+查询数据库成功
+Database closed!
+5、检查结果
+测试结束，输出log完结
+
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+    <td>paramunittest.SecAddEvntTest_0</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c6',1)">Detail</a></td>
+</tr>
+
+<tr id='pt6.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_sec_add_event</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.1')" >
+        pass</a>
+
+    <div id='div_pt6.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt6.1: test_sec_add_event_sign_null
 
 
 1、请求的地址：http://127.0.0.1:8000/api/sec_add_event/
@@ -319,25 +606,25 @@ response：
     <td>1</td>
     <td>0</td>
     <td>0</td>
-    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
+    <td><a href="javascript:showClassDetail('c7',1)">Detail</a></td>
 </tr>
 
-<tr id='pt2.1' class='hiddenRow'>
+<tr id='pt7.1' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_sec_add_event</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt7.1')" >
         pass</a>
 
-    <div id='div_pt2.1' class="popup_window">
+    <div id='div_pt7.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt7.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt2.1: test_sec_add_event_sign_timeout
+pt7.1: test_sec_add_event_sign_timeout
 
 
 1、请求的地址：http://127.0.0.1:8000/api/sec_add_event/
@@ -370,25 +657,25 @@ response：
     <td>1</td>
     <td>0</td>
     <td>0</td>
-    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
+    <td><a href="javascript:showClassDetail('c8',1)">Detail</a></td>
 </tr>
 
-<tr id='pt3.1' class='hiddenRow'>
+<tr id='pt8.1' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_sec_add_event</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt8.1')" >
         pass</a>
 
-    <div id='div_pt3.1' class="popup_window">
+    <div id='div_pt8.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt8.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt3.1: test_sec_add_event_sign_error
+pt8.1: test_sec_add_event_sign_error
 
 
 1、请求的地址：http://127.0.0.1:8000/api/sec_add_event/
@@ -421,25 +708,25 @@ response：
     <td>1</td>
     <td>0</td>
     <td>0</td>
-    <td><a href="javascript:showClassDetail('c4',1)">Detail</a></td>
+    <td><a href="javascript:showClassDetail('c9',1)">Detail</a></td>
 </tr>
 
-<tr id='pt4.1' class='hiddenRow'>
+<tr id='pt9.1' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_sec_add_event</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt9.1')" >
         pass</a>
 
-    <div id='div_pt4.1' class="popup_window">
+    <div id='div_pt9.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt9.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt4.1: test_sec_add_event_all_null
+pt9.1: test_sec_add_event_all_null
 
 
 1、请求的地址：http://127.0.0.1:8000/api/sec_add_event/
@@ -472,25 +759,25 @@ response：
     <td>1</td>
     <td>0</td>
     <td>0</td>
-    <td><a href="javascript:showClassDetail('c5',1)">Detail</a></td>
+    <td><a href="javascript:showClassDetail('c10',1)">Detail</a></td>
 </tr>
 
-<tr id='pt5.1' class='hiddenRow'>
+<tr id='pt10.1' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_sec_add_event</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.1')" >
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt10.1')" >
         pass</a>
 
-    <div id='div_pt5.1' class="popup_window">
+    <div id='div_pt10.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt10.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt5.1: test_sec_add_event_eid_exist
+pt10.1: test_sec_add_event_eid_exist
 
 
 1、请求的地址：http://127.0.0.1:8000/api/sec_add_event/
@@ -523,25 +810,25 @@ response：
     <td>1</td>
     <td>0</td>
     <td>0</td>
-    <td><a href="javascript:showClassDetail('c6',1)">Detail</a></td>
+    <td><a href="javascript:showClassDetail('c11',1)">Detail</a></td>
 </tr>
 
-<tr id='pt6.1' class='hiddenRow'>
+<tr id='pt11.1' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_sec_add_event</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.1')" >
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt11.1')" >
         pass</a>
 
-    <div id='div_pt6.1' class="popup_window">
+    <div id='div_pt11.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt11.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt6.1: test_sec_add_event_name_exist
+pt11.1: test_sec_add_event_name_exist
 
 
 1、请求的地址：http://127.0.0.1:8000/api/sec_add_event/
@@ -574,25 +861,25 @@ response：
     <td>1</td>
     <td>0</td>
     <td>0</td>
-    <td><a href="javascript:showClassDetail('c7',1)">Detail</a></td>
+    <td><a href="javascript:showClassDetail('c12',1)">Detail</a></td>
 </tr>
 
-<tr id='pt7.1' class='hiddenRow'>
+<tr id='pt12.1' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_sec_add_event</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt7.1')" >
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt12.1')" >
         pass</a>
 
-    <div id='div_pt7.1' class="popup_window">
+    <div id='div_pt12.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt7.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt12.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt7.1: test_sec_add_event_data_type_error
+pt12.1: test_sec_add_event_data_type_error
 
 
 1、请求的地址：http://127.0.0.1:8000/api/sec_add_event/
@@ -625,25 +912,25 @@ response：
     <td>1</td>
     <td>0</td>
     <td>0</td>
-    <td><a href="javascript:showClassDetail('c8',1)">Detail</a></td>
+    <td><a href="javascript:showClassDetail('c13',1)">Detail</a></td>
 </tr>
 
-<tr id='pt8.1' class='hiddenRow'>
+<tr id='pt13.1' class='hiddenRow'>
     <td class='none'><div class='testcase'>test_sec_add_event</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt8.1')" >
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt13.1')" >
         pass</a>
 
-    <div id='div_pt8.1' class="popup_window">
+    <div id='div_pt13.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt8.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt13.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt8.1: test_sec_add_event_success
+pt13.1: test_sec_add_event_success
 
 
 1、请求的地址：http://127.0.0.1:8000/api/sec_add_event/
@@ -677,8 +964,8 @@ Database closed!
 
 <tr id='total_row'>
     <td>Total</td>
-    <td>8</td>
-    <td class="text text-success">8</td>
+    <td>13</td>
+    <td class="text text-success">13</td>
     <td class="text text-danger">0</td>
     <td class="text text-warning">0</td>
     <td>&nbsp;</td>
@@ -704,7 +991,7 @@ var data = [
 		labelFontSize: '16'
 	},
 	{
-		value : 8,
+		value : 13,
 		color : "#d6e9c6",
 		label : "Pass",
 		labelColor: 'white',

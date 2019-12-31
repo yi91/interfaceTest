@@ -67,7 +67,7 @@ class GetEventListTest(unittest.TestCase):
     def checkResult(self):
         """ 查询数据库，检查结果是否正确 """
         # 1、向html展示返回的信息
-        commondef.show_return_msg(self.info)
+        commondef.show_return_msg(self.resp)
 
         # 根据result的结果，判断是否需要再检查一遍数据库
         if self.result == '1':
