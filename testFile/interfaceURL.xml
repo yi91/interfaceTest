@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <interface>
 
-    <url name="add_event">
+    <url name="sec_add_event">
         <group>api</group>
-        <module>add_event</module>
+        <module>sec_add_event</module>
         <action></action>
     </url>
 

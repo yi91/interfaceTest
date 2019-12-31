@@ -13,4 +13,5 @@
 #user/testAddAddress
 #user/testDeleteAddress
 #user/testBlogLogin
-api/test_get_event_list
+#api/test_get_event_list
+api/test_sec_add_event

@@ -36,6 +36,10 @@ class ConfigHttp:
         self.url = scheme + '://' + host + ':' + port + url
         return self.url
 
+    def set_method(self, method):
+        """ 设置dubbo接口的测试方法 """
+        self.method = method
+
     # 不同于readConfig的设置headers
     def set_headers(self, header):
         """
@@ -132,6 +136,25 @@ class ConfigHttp:
         except TimeoutError:
             self.logger.error("Time out!")
             return None
+
+    def dubbo(self):
+        """ 测试dubbo类型的接口 """
+        # 初始化dubbo对象
+        conn = dubbo_telnet.connect(host, port)
+        # 设置telnet连接超时时间
+        conn.set_connect_timeout(10)
+        # 设置dubbo服务返回响应的编码
+        conn.set_encoding('gbk')
+
+        # 显示服务列表
+        # print(conn.do("ls"))
+        # 显示指定服务的方法列表
+        # print(conn.do("ls XXXService"))
+
+        # 方法调用
+        interface = 'XXXService'
+        result = conn.invoke(interface, self.method, self.params)
+        return json.dumps(result, sort_keys=True, indent=4, separators=(',', ': '), skipkeys=True, ensure_ascii=False)
 
 
 if __name__ == "__main__":

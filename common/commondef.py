@@ -12,7 +12,7 @@ import base64
 
 localReadConfig = readConfig.ReadConfig()
 proDir = readConfig.proDir
-localConfigHttp = configHttp.ConfigHttp()
+# localConfigHttp = configHttp.ConfigHttp()
 log = Log.get_log()
 logger = log.get_logger()
 
@@ -72,7 +72,7 @@ def show_return_msg(response):
     msg = response.text
     print("\nresponse：\n请求地址：" + url)
     # 可以显示中文
-    print("请求返回值：" + '\n' + json.dumps(json.loads(msg), ensure_ascii=False, sort_keys=True, indent=4)+'\n')
+    print("请求返回值：" + '\n' + json.dumps(json.loads(msg), ensure_ascii=False, sort_keys=True, indent=4) + '\n')
 
 
 # ****************************** 从excel文件中读取测试用例 ********************************
@@ -178,7 +178,7 @@ def get_url_from_xml(name):
         if i is None:
             url_list.remove(i)
     # /v2/ + group + module + action
-    url = '/' + '/'.join(url_list)
+    url = '/' + '/'.join(url_list) + '/'
     return url
 
 

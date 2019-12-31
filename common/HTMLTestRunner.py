@@ -202,7 +202,6 @@ function showOutput(id, name) {
 """
     # variables: (title, generator, stylesheet, heading, report, ending)
 
-
     # ------------------------------------------------------------------------
     # Stylesheet
     #

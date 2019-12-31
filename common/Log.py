@@ -80,7 +80,6 @@ class Log:
 
     def write_result(self, result):
         """
-
         :param result:
         :return:
         """
