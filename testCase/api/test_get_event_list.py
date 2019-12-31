@@ -55,6 +55,10 @@ class GetEventListTest(unittest.TestCase):
         # 4、test interface
         self.resp = localConfigHttp.get()
         print('4、发送请求的方法：' + self.method)
+        # 断言
+        self.info = self.resp.json()
+        self.assertEqual(str(self.info['status']), self.status)
+        self.assertIn(self.message, self.info['message'])
 
         # 5、check result
         self.checkResult()
@@ -63,18 +67,10 @@ class GetEventListTest(unittest.TestCase):
     def checkResult(self):
         """ 查询数据库，检查结果是否正确 """
         # 1、向html展示返回的信息
-        commondef.show_return_msg(self.resp)
+        commondef.show_return_msg(self.info)
 
-        self.info = self.resp.json()
         # 根据result的结果，判断是否需要再检查一遍数据库
-        if self.result == '0':  # 不用检查
-            self.assertEqual(str(self.info['status']), self.status)
-            self.assertIn(self.message, self.info['message'])
-
-        # 需要检查数据库
         if self.result == '1':
-            self.assertEqual(str(self.info['status']), self.status)
-            self.assertIn(self.message, self.info['message'])
 
             # get_sql的参数全靠手写
             sql = commondef.get_sql('guest', 'sign_event', 'sec_get_event_list')

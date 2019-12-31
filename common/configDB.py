@@ -52,7 +52,7 @@ class MyDB:
         :return:
         """
         self.connectDB()
-        # 使用 execute()方法执行SQL查询，多个参数传入时需要用集合形式，list或者tuple等
+        # 使用 execute()方法执行SQL查询，多个参数传入时需要用集合形式，list或者tuple等，查询和删除的返回值是行数
         self.cursor.execute(sql, params)
         # 手动提交执行
         self.db.commit()

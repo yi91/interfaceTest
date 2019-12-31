@@ -219,9 +219,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>Test Report</h1>
-<p class='attribute'><strong>Start Time:</strong> 2019-12-31 14:45:53</p>
-<p class='attribute'><strong>Duration:</strong> 0:00:00.213946</p>
-<p class='attribute'><strong>Status:</strong> Pass 7 Failure 1</p>
+<p class='attribute'><strong>Start Time:</strong> 2019-12-31 16:18:16</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:04.279287</p>
+<p class='attribute'><strong>Status:</strong> Pass 8</p>
 
 <p class='description'>Test Description</p>
 </div>
@@ -292,6 +292,15 @@ pt1.1: test_sec_add_event_sign_null
 1、请求的地址：http://127.0.0.1:8000/api/sec_add_event/
 3、发送请求的参数：{'eid': '', 'name': '', 'limit': '', 'address': "", 'start_time': '', 'time': '', 'sign': ''}
 4、发送请求的方法：post
+
+response：
+请求地址：http://127.0.0.1:8000/api/sec_add_event/
+请求返回值：
+{
+    "message": "user sign null",
+    "status": 10011
+}
+
 测试结束，输出log完结
 
 
@@ -334,6 +343,15 @@ pt2.1: test_sec_add_event_sign_timeout
 1、请求的地址：http://127.0.0.1:8000/api/sec_add_event/
 3、发送请求的参数：{'eid': 11, 'name': '一加4发布会', 'limit': 2000, 'address': "深圳宝体", 'start_time': '2017', 'time': int(self.client_time)-63, 'sign': self.client_sign}
 4、发送请求的方法：post
+
+response：
+请求地址：http://127.0.0.1:8000/api/sec_add_event/
+请求返回值：
+{
+    "message": "请求超时，请重试",
+    "status": 10012
+}
+
 测试结束，输出log完结
 
 
@@ -376,6 +394,15 @@ pt3.1: test_sec_add_event_sign_error
 1、请求的地址：http://127.0.0.1:8000/api/sec_add_event/
 3、发送请求的参数：{'eid': 12, 'name': '红米Pro发布会', 'limit': 2000, 'address': "北京水立方", 'start_time': '2017', 'time': self.client_time, 'sign': '123'}
 4、发送请求的方法：post
+
+response：
+请求地址：http://127.0.0.1:8000/api/sec_add_event/
+请求返回值：
+{
+    "message": "sign error",
+    "status": 10013
+}
+
 测试结束，输出log完结
 
 
@@ -418,6 +445,15 @@ pt4.1: test_sec_add_event_all_null
 1、请求的地址：http://127.0.0.1:8000/api/sec_add_event/
 3、发送请求的参数：{'eid': '', '': '', 'limit': '', 'address': "", 'start_time': '', 'time': self.client_time, 'sign': self.client_sign}
 4、发送请求的方法：post
+
+response：
+请求地址：http://127.0.0.1:8000/api/sec_add_event/
+请求返回值：
+{
+    "message": "参数不能为空！",
+    "status": 10021
+}
+
 测试结束，输出log完结
 
 
@@ -460,6 +496,15 @@ pt5.1: test_sec_add_event_eid_exist
 1、请求的地址：http://127.0.0.1:8000/api/sec_add_event/
 3、发送请求的参数：{'eid': 2, 'name': '小米2发布会', 'limit': 2000, 'status': 1, 'address': '北京国家会议中心', 'start_time': '2018-08-20 14:00:00',  'time': self.client_time, 'sign': self.client_sign}
 4、发送请求的方法：post
+
+response：
+请求地址：http://127.0.0.1:8000/api/sec_add_event/
+请求返回值：
+{
+    "message": "event id 已经存在了",
+    "status": 10022
+}
+
 测试结束，输出log完结
 
 
@@ -502,6 +547,15 @@ pt6.1: test_sec_add_event_name_exist
 1、请求的地址：http://127.0.0.1:8000/api/sec_add_event/
 3、发送请求的参数：{'eid': 14, 'name': '红米Pro发布会', 'limit': 2000, 'address': "北京水立方", 'start_time': '2018-05-10 12:00:00', 'time': self.client_time, 'sign': self.client_sign}
 4、发送请求的方法：post
+
+response：
+请求地址：http://127.0.0.1:8000/api/sec_add_event/
+请求返回值：
+{
+    "message": "event name 已经存在",
+    "status": 10023
+}
+
 测试结束，输出log完结
 
 
@@ -544,6 +598,15 @@ pt7.1: test_sec_add_event_data_type_error
 1、请求的地址：http://127.0.0.1:8000/api/sec_add_event/
 3、发送请求的参数：{'eid': 15, 'name': '一加8手机发布会', 'limit': 2000, 'address': "北京水立方", 'start_time': '2017', 'time': self.client_time, 'sign': self.client_sign}
 4、发送请求的方法：post
+
+response：
+请求地址：http://127.0.0.1:8000/api/sec_add_event/
+请求返回值：
+{
+    "message": "start_time格式化错误，请检查",
+    "status": 10024
+}
+
 测试结束，输出log完结
 
 
@@ -556,45 +619,52 @@ pt7.1: test_sec_add_event_data_type_error
     </td>
 </tr>
 
-<tr class='failClass'>
+<tr class='passClass'>
     <td>paramunittest.SecAddEvntTest_7</td>
     <td>1</td>
-    <td>0</td>
     <td>1</td>
+    <td>0</td>
     <td>0</td>
     <td><a href="javascript:showClassDetail('c8',1)">Detail</a></td>
 </tr>
 
-<tr id='ft8.1' class='none'>
-    <td class='failCase'><div class='testcase'>test_sec_add_event</div></td>
+<tr id='pt8.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_sec_add_event</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft8.1')" >
-        fail</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt8.1')" >
+        pass</a>
 
-    <div id='div_ft8.1' class="popup_window">
+    <div id='div_pt8.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft8.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt8.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-ft8.1: test_sec_add_event_success
+pt8.1: test_sec_add_event_success
 
 
 1、请求的地址：http://127.0.0.1:8000/api/sec_add_event/
-3、发送请求的参数：{'eid': 13, 'name': '一加9手机发布会', 'limit': 2000, 'address': "北京水立方", 'start_time': '2017-05-10 12:00:00', 'time': self.client_time, 'sign': self.client_sign}
+3、发送请求的参数：{'eid': 17, 'name': '一加9手机发布会', 'limit': 2000, 'address': "北京水立方", 'start_time': '2017-05-10 12:00:00', 'time': self.client_time, 'sign': self.client_sign}
 4、发送请求的方法：post
+
+response：
+请求地址：http://127.0.0.1:8000/api/sec_add_event/
+请求返回值：
+{
+    "message": "添加发布会成功",
+    "status": 200
+}
+
+Connect DB successfully!
+查询数据库成功
+Connect DB successfully!
+删除旧数据成功
+Database closed!
 测试结束，输出log完结
 
-
-Traceback (most recent call last):
-  File "D:\Program Files\Python\pycharmProject\interfaceTest\testCase\api\test_sec_add_event.py", line 62, in test_sec_add_event
-    self.assertEqual(str(self.info['status']), self.code)
-AssertionError: '10022' != '200'
-- 10022
-+ 200
 
 
 
@@ -608,8 +678,8 @@ AssertionError: '10022' != '200'
 <tr id='total_row'>
     <td>Total</td>
     <td>8</td>
-    <td class="text text-success">7</td>
-    <td class="text text-danger">1</td>
+    <td class="text text-success">8</td>
+    <td class="text text-danger">0</td>
     <td class="text text-warning">0</td>
     <td>&nbsp;</td>
 </tr>
@@ -627,14 +697,14 @@ var data = [
 		labelFontSize: '16'
 	},
 	{
-		value : 1,
+		value : 0,
 		color : "#faebcc",
 		label: "Fail",
 		labelColor: 'white',
 		labelFontSize: '16'
 	},
 	{
-		value : 7,
+		value : 8,
 		color : "#d6e9c6",
 		label : "Pass",
 		labelColor: 'white',

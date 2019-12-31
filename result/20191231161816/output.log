@@ -1,0 +1,37 @@
+2019-12-31 16:18:16,632 - root - INFO - ********TEST START********
+2019-12-31 16:18:16,632 - root - INFO - url的xml文件有字段为空！！！
+2019-12-31 16:18:16,635 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2019-12-31 16:18:16,637 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "POST /api/sec_add_event/ HTTP/1.1" 200 46
+2019-12-31 16:18:16,638 - root - INFO - test_sec_add_event_sign_null - Code:10011 - msg:user sign null
+2019-12-31 16:18:16,638 - root - INFO - url的xml文件有字段为空！！！
+2019-12-31 16:18:16,640 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2019-12-31 16:18:16,652 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "POST /api/sec_add_event/ HTTP/1.1" 200 80
+2019-12-31 16:18:16,654 - root - INFO - test_sec_add_event_sign_timeout - Code:10012 - msg:请求超时，请重试
+2019-12-31 16:18:16,655 - root - INFO - url的xml文件有字段为空！！！
+2019-12-31 16:18:16,656 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2019-12-31 16:18:16,658 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "POST /api/sec_add_event/ HTTP/1.1" 200 42
+2019-12-31 16:18:16,658 - root - INFO - test_sec_add_event_sign_error - Code:10013 - msg:sign error
+2019-12-31 16:18:16,659 - root - INFO - url的xml文件有字段为空！！！
+2019-12-31 16:18:16,660 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2019-12-31 16:18:16,672 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "POST /api/sec_add_event/ HTTP/1.1" 200 74
+2019-12-31 16:18:16,672 - root - INFO - test_sec_add_event_all_null - Code:10021 - msg:参数不能为空！
+2019-12-31 16:18:16,673 - root - INFO - url的xml文件有字段为空！！！
+2019-12-31 16:18:16,674 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2019-12-31 16:18:16,712 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "POST /api/sec_add_event/ HTTP/1.1" 200 71
+2019-12-31 16:18:16,713 - root - INFO - test_sec_add_event_eid_exist - Code:10022 - msg:event id 已经存在了
+2019-12-31 16:18:16,713 - root - INFO - url的xml文件有字段为空！！！
+2019-12-31 16:18:16,714 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2019-12-31 16:18:16,749 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "POST /api/sec_add_event/ HTTP/1.1" 200 67
+2019-12-31 16:18:16,750 - root - INFO - test_sec_add_event_name_exist - Code:10023 - msg:event name 已经存在
+2019-12-31 16:18:16,751 - root - INFO - url的xml文件有字段为空！！！
+2019-12-31 16:18:16,752 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2019-12-31 16:18:16,788 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "POST /api/sec_add_event/ HTTP/1.1" 200 96
+2019-12-31 16:18:16,789 - root - INFO - test_sec_add_event_data_type_error - Code:10024 - msg:start_time格式化错误，请检查
+2019-12-31 16:18:16,789 - root - INFO - url的xml文件有字段为空！！！
+2019-12-31 16:18:16,790 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2019-12-31 16:18:16,853 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "POST /api/sec_add_event/ HTTP/1.1" 200 72
+2019-12-31 16:18:18,893 - root - INFO - 查询数据库成功
+2019-12-31 16:18:20,912 - root - INFO - 删除旧数据成功
+2019-12-31 16:18:20,912 - root - INFO - test_sec_add_event_success - Code:200 - msg:添加发布会成功
+2019-12-31 16:18:20,913 - root - INFO - *********TEST END*********
+2019-12-31 16:18:20,913 - root - INFO - Doesn't send report email to developer.

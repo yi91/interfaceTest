@@ -12,6 +12,11 @@
             <sql id="add_event">
                 INSERT INTO sign_event(`id`, `name`, `limit`, `status`, `address`, `start_time`, `create_time`) VALUES (%s, %s, %s, %s, %s, %s, %s)
             </sql>
+
+            <sql id="delete_event">
+                DELETE FROM sign_event WHERE id=%s or name=%s
+            </sql>
+
         </table>
 
 
