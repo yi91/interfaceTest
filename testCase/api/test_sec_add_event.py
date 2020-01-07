@@ -74,26 +74,29 @@ class SecAddEvntTest(unittest.TestCase):
 
         # 根据result的值，检查数据库
         if self.result == 1:
+
             # get_sql的参数全靠手写
             sql = commondef.get_sql('guest', 'sign_event', 'sec_get_event_list')
             # self.eid if self.eid != '' else ''，三元运算符，前面为真后面为假
             id = self.data['eid'] if self.data['eid'] != '' else ''
             name = self.data['name'] if self.data['name'] != '' else ''
-            cursor = localConfigDB.executeSQL(sql, (id, name))
-
-            if cursor is not None:
-                self.logger.info("查询数据库成功")
-                print("查询数据库成功")
 
             # 关闭数据库连接前，先删除旧数据
             del_sql = commondef.get_sql('guest', 'sign_event', 'delete_event')
-            del_cursor = localConfigDB.executeSQL(del_sql, (id, name))
-            if del_cursor is not None:
-                self.logger.info("删除旧数据成功")
-                print("删除旧数据成功")
 
-            # 关闭连接
-            localConfigDB.closeDB()
+            try:
+                cursor = localConfigDB.executeSQL(sql, (id, name))
+                if cursor is not None:
+                    self.logger.info("查询数据库成功")
+                    print("查询数据库成功")
+
+                del_cursor = localConfigDB.executeSQL(del_sql, (id, name))
+                if del_cursor is not None:
+                    self.logger.info("删除旧数据成功")
+                    print("删除旧数据成功")
+            finally:
+                # 关闭连接
+                localConfigDB.closeDB()
 
     def tearDown(self):
         # 输出到日志文件

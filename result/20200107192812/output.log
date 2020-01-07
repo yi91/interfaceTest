@@ -1,0 +1,68 @@
+2020-01-07 19:28:16,996 - root - INFO - ********TEST START********
+2020-01-07 19:28:17,190 - PIL.Image - DEBUG - Importing BlpImagePlugin
+2020-01-07 19:28:17,191 - PIL.Image - DEBUG - Importing BmpImagePlugin
+2020-01-07 19:28:17,194 - PIL.Image - DEBUG - Importing BufrStubImagePlugin
+2020-01-07 19:28:17,194 - PIL.Image - DEBUG - Importing CurImagePlugin
+2020-01-07 19:28:17,195 - PIL.Image - DEBUG - Importing DcxImagePlugin
+2020-01-07 19:28:17,196 - PIL.Image - DEBUG - Importing DdsImagePlugin
+2020-01-07 19:28:17,197 - PIL.Image - DEBUG - Importing EpsImagePlugin
+2020-01-07 19:28:17,234 - PIL.Image - DEBUG - Importing FitsStubImagePlugin
+2020-01-07 19:28:17,234 - PIL.Image - DEBUG - Importing FliImagePlugin
+2020-01-07 19:28:17,235 - PIL.Image - DEBUG - Importing FpxImagePlugin
+2020-01-07 19:28:17,238 - PIL.Image - DEBUG - Importing FtexImagePlugin
+2020-01-07 19:28:17,239 - PIL.Image - DEBUG - Importing GbrImagePlugin
+2020-01-07 19:28:17,239 - PIL.Image - DEBUG - Importing GifImagePlugin
+2020-01-07 19:28:17,246 - PIL.Image - DEBUG - Importing GribStubImagePlugin
+2020-01-07 19:28:17,247 - PIL.Image - DEBUG - Importing Hdf5StubImagePlugin
+2020-01-07 19:28:17,247 - PIL.Image - DEBUG - Importing IcnsImagePlugin
+2020-01-07 19:28:17,249 - PIL.Image - DEBUG - Importing IcoImagePlugin
+2020-01-07 19:28:17,250 - PIL.Image - DEBUG - Importing ImImagePlugin
+2020-01-07 19:28:17,251 - PIL.Image - DEBUG - Importing ImtImagePlugin
+2020-01-07 19:28:17,252 - PIL.Image - DEBUG - Importing IptcImagePlugin
+2020-01-07 19:28:17,252 - PIL.Image - DEBUG - Importing JpegImagePlugin
+2020-01-07 19:28:17,262 - PIL.Image - DEBUG - Importing Jpeg2KImagePlugin
+2020-01-07 19:28:17,262 - PIL.Image - DEBUG - Importing McIdasImagePlugin
+2020-01-07 19:28:17,262 - PIL.Image - DEBUG - Importing MicImagePlugin
+2020-01-07 19:28:17,263 - PIL.Image - DEBUG - Importing MpegImagePlugin
+2020-01-07 19:28:17,263 - PIL.Image - DEBUG - Importing MpoImagePlugin
+2020-01-07 19:28:17,264 - PIL.Image - DEBUG - Importing MspImagePlugin
+2020-01-07 19:28:17,264 - PIL.Image - DEBUG - Importing PalmImagePlugin
+2020-01-07 19:28:17,265 - PIL.Image - DEBUG - Importing PcdImagePlugin
+2020-01-07 19:28:17,265 - PIL.Image - DEBUG - Importing PcxImagePlugin
+2020-01-07 19:28:17,266 - PIL.Image - DEBUG - Importing PdfImagePlugin
+2020-01-07 19:28:17,283 - PIL.Image - DEBUG - Importing PixarImagePlugin
+2020-01-07 19:28:17,284 - PIL.Image - DEBUG - Importing PngImagePlugin
+2020-01-07 19:28:17,284 - PIL.Image - DEBUG - Importing PpmImagePlugin
+2020-01-07 19:28:17,284 - PIL.Image - DEBUG - Importing PsdImagePlugin
+2020-01-07 19:28:17,285 - PIL.Image - DEBUG - Importing SgiImagePlugin
+2020-01-07 19:28:17,285 - PIL.Image - DEBUG - Importing SpiderImagePlugin
+2020-01-07 19:28:17,286 - PIL.Image - DEBUG - Importing SunImagePlugin
+2020-01-07 19:28:17,286 - PIL.Image - DEBUG - Importing TgaImagePlugin
+2020-01-07 19:28:17,287 - PIL.Image - DEBUG - Importing TiffImagePlugin
+2020-01-07 19:28:17,287 - PIL.Image - DEBUG - Importing WebPImagePlugin
+2020-01-07 19:28:17,288 - PIL.Image - DEBUG - Importing WmfImagePlugin
+2020-01-07 19:28:17,288 - PIL.Image - DEBUG - Importing XbmImagePlugin
+2020-01-07 19:28:17,291 - PIL.Image - DEBUG - Importing XpmImagePlugin
+2020-01-07 19:28:17,292 - PIL.Image - DEBUG - Importing XVThumbImagePlugin
+2020-01-07 19:28:45,765 - root - INFO - url的xml文件有字段为空！！！
+2020-01-07 19:28:45,771 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2020-01-07 19:28:45,789 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/sec_get_event_list/?eid=&name= HTTP/1.1" 200 46
+2020-01-07 19:32:51,175 - root - INFO - test_get_event_list_auth_null - Code:10011 - msg:user auth null
+2020-01-07 19:32:58,324 - root - INFO - url的xml文件有字段为空！！！
+2020-01-07 19:32:58,327 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2020-01-07 19:32:58,404 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/sec_get_event_list/?eid=&name= HTTP/1.1" 200 46
+2020-01-07 19:33:25,143 - root - INFO - test_get_event_list_auth_error - Code:10012 - msg:user auth fail
+2020-01-07 19:33:27,333 - root - INFO - url的xml文件有字段为空！！！
+2020-01-07 19:33:27,336 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2020-01-07 19:33:27,426 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/sec_get_event_list/?eid=&name= HTTP/1.1" 200 74
+2020-01-07 19:33:30,440 - root - INFO - test_get_event_list_eid_null - Code:10021 - msg:参数不能都为空
+2020-01-07 19:33:31,916 - root - INFO - url的xml文件有字段为空！！！
+2020-01-07 19:33:31,920 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2020-01-07 19:33:32,011 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/sec_get_event_list/?eid=1&name= HTTP/1.1" 200 212
+2020-01-07 19:33:35,131 - root - INFO - test_get_event_list_eid_success - Code:200 - msg:success
+2020-01-07 19:33:36,796 - root - INFO - url的xml文件有字段为空！！！
+2020-01-07 19:33:36,801 - urllib3.connectionpool - DEBUG - Starting new HTTP connection (1): 127.0.0.1:8000
+2020-01-07 19:33:36,890 - urllib3.connectionpool - DEBUG - http://127.0.0.1:8000 "GET /api/sec_get_event_list/?eid=&name=%E5%B0%8F%E7%B1%B35%E5%8F%91%E5%B8%83%E4%BC%9A HTTP/1.1" 200 224
+2020-01-07 19:33:42,211 - root - INFO - test_get_event_list_name_success - Code:200 - msg:success
+2020-01-07 19:33:42,212 - root - INFO - *********TEST END*********
+2020-01-07 19:33:42,213 - root - INFO - Doesn't send report email to developer.

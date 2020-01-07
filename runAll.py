@@ -3,7 +3,7 @@
 import os
 import unittest
 from common.Log import MyLog as Log
-from common import HTMLTestRunner
+from common import HTMLTestRunner, businessCommon
 import readConfig
 from common.configEmail import MyEmail
 
@@ -105,8 +105,14 @@ class AllTest:
 
 
 if __name__ == '__main__':
+    # 初始化测试数据
+    businessCommon.init_test_data()
+
     obj = AllTest()
     obj.run()
+
+    # 测试完成删除测试数据
+    # businessCommon.del_init()
 
 '''
 用例执行的顺序

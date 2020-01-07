@@ -8,41 +8,38 @@ localReadConfig = readConfig.ReadConfig()
 
 
 class MyDB:
-    global host, username, password, port, database, config
-
-    host = localReadConfig.get_db("host")
-    username = localReadConfig.get_db("username")
-    password = localReadConfig.get_db("password")
-    port = localReadConfig.get_db("port")
-    database = localReadConfig.get_db("database")
-
-    config = {
-        'host': str(host),
-        'user': username,
-        'passwd': password,
-        'port': int(port),
-        'db': database
-    }
 
     def __init__(self):
         self.log = Log.get_log()
         self.logger = self.log.get_logger()
-        self.db = None
-        self.cursor = None
-
-    def connectDB(self):
-        """
-        connect to database
-        :return:
-        """
         try:
             # 打开数据库连接
-            self.db = pymysql.connect(**config)
+            self.db = pymysql.connect(host=localReadConfig.get_db("host"),
+                                      user=localReadConfig.get_db("username"),
+                                      password=localReadConfig.get_db("password"),
+                                      port=int(localReadConfig.get_db("port")),
+                                      db=localReadConfig.get_db("database"),
+                                      charset='utf8',
+                                      cursorclass=pymysql.cursors.DictCursor)
             # 使用 cursor() 方法创建一个游标对象 cursor
             self.cursor = self.db.cursor()
             print("Connect DB successfully!")
         except ConnectionError as ex:
             self.logger.error(str(ex))
+
+    # def connectDB(self):
+    #     """
+    #     connect to database
+    #     :return:
+    #     """
+    #     try:
+    #         # 打开数据库连接
+    #         self.db = pymysql.connect(**config)
+    #         # 使用 cursor() 方法创建一个游标对象 cursor
+    #         self.cursor = self.db.cursor()
+    #         print("Connect DB successfully!")
+    #     except ConnectionError as ex:
+    #         self.logger.error(str(ex))
 
     def executeSQL(self, sql, params):
         """
@@ -51,7 +48,8 @@ class MyDB:
         :param params:
         :return:
         """
-        self.connectDB()
+        # 先执行 db.ping(reconnect=True)，可以保证连接丢失时自动重连
+        self.db.ping(reconnect=True)
         # 使用 execute()方法执行SQL查询，多个参数传入时需要用集合形式，list或者tuple等，查询和删除的返回值是行数
         self.cursor.execute(sql, params)
         # 手动提交执行
@@ -88,4 +86,3 @@ class MyDB:
 
 if __name__ == '__main__':
     mydb = MyDB()
-    mydb.connectDB()

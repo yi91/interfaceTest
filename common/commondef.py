@@ -5,14 +5,12 @@ import readConfig
 import os
 from xlrd import open_workbook
 from xml.etree import ElementTree
-import common.configHttp as configHttp
 from common.Log import MyLog as Log
 import json
 import base64
 
 localReadConfig = readConfig.ReadConfig()
 proDir = readConfig.proDir
-# localConfigHttp = configHttp.ConfigHttp()
 log = Log.get_log()
 logger = log.get_logger()
 

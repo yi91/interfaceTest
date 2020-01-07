@@ -3,8 +3,7 @@
 import unittest
 
 import paramunittest
-from common.commondef import configHttp
-from common import commondef, configDB
+from common import commondef, configDB, configHttp
 from common.Log import MyLog
 
 get_event_list_xls = commondef.get_xls("apiCase.xlsx", "sec_get_event_list")
@@ -33,10 +32,9 @@ class GetEventListTest(unittest.TestCase):
     def setUp(self):
         self.log = MyLog.get_log()
         self.logger = self.log.get_logger()
-        print(self.case_name+'\n\n')
+        print(self.case_name + '\n\n')
 
     def test_get_event_list(self):
-
         # 1、set url
         url = commondef.get_url_from_xml('sec_get_event_list')
         # 获取完整的self.url
@@ -44,7 +42,7 @@ class GetEventListTest(unittest.TestCase):
         print("1、请求的地址：" + self.url)
 
         # 2、set headers
-        self.header = {'authorization': 'Basic '+commondef.my_base64(self.auth)}
+        self.header = {'authorization': 'Basic ' + commondef.my_base64(self.auth)}
         localConfigHttp.set_headers(self.header)
         print("2、设置header：" + str(self.header))
 
@@ -77,11 +75,14 @@ class GetEventListTest(unittest.TestCase):
             # self.eid if self.eid != '' else ''，三元运算符，前面为真后面为假
             id = self.eid if self.eid != '' else ''
             name = self.name if self.name != '' else ''
-            cursor = localConfigDB.executeSQL(sql, (id, name))
 
-            if cursor is not None:
-                print("查询数据库成功")
-            localConfigDB.closeDB()
+            try:
+                cursor = localConfigDB.executeSQL(sql, (id, name))
+
+                if cursor is not None:
+                    print("查询数据库成功")
+            finally:
+                localConfigDB.closeDB()
 
     def tearDown(self):
         # 输出到日志文件
