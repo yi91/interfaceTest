@@ -91,7 +91,7 @@ def init_test_data():
                 localConfigDB.executeSQL(sql, d)
                 # 查看执行完之后的游标是否不为空
                 if localConfigDB.cursor is not None:
-                    print("初始化event数据成功")
+                    print(table + "初始化数据成功" + str(d))
     finally:
         localConfigDB.closeDB()
 

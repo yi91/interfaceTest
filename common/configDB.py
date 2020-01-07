@@ -81,7 +81,7 @@ class MyDB:
         :return:
         """
         self.db.close()
-        print("Database closed!")
+        print("\nDatabase closed!")
 
 
 if __name__ == '__main__':
