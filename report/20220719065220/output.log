@@ -1,0 +1,22 @@
+2022-07-19 06:52:21,355 - common_def - INFO - 读取 case_template.xlsx 用例成功
+2022-07-19 06:52:21,386 - ConfigHttp - INFO - 请求方式：get
+2022-07-19 06:52:21,386 - ConfigHttp - INFO - 请求头：{'Authorization': 'Basic YWRtaW46YWRtaW4xMjM0NTY='}
+2022-07-19 06:52:21,386 - ConfigHttp - INFO - 请求的url：http://127.0.0.1:8081/users/1/
+2022-07-19 06:52:21,511 - ConfigHttp - INFO - 用例 test_users_auth_ok 请求成功。
+2022-07-19 06:52:22,042 - common_def - INFO - 接口测试成功，结果和返回值已写入 excel 
+2022-07-19 06:52:22,042 - common_def - INFO - 未找到对应的case_name，请检查
+2022-07-19 06:52:22,105 - ConfigHttp - INFO - 请求方式：get
+2022-07-19 06:52:22,105 - ConfigHttp - INFO - 请求头：{'Authorization': 'Basic YWRtaW46YWRtaW4xMjM0NTY='}
+2022-07-19 06:52:22,105 - ConfigHttp - INFO - 请求的url：http://127.0.0.1:8081/users/4/
+2022-07-19 06:52:22,245 - ConfigHttp - INFO - 用例 test_users4_auth_ok 请求成功。
+2022-07-19 06:52:22,245 - ConfigHttp - INFO - 请求方式：get
+2022-07-19 06:52:22,245 - ConfigHttp - INFO - 请求头：{'sessionid': 'i92wn5cealc4z1omidokrl969i2c99jd'}
+2022-07-19 06:52:22,245 - ConfigHttp - INFO - 请求的url：http://127.0.0.1:8081/groups/1/
+2022-07-19 06:52:22,261 - ConfigHttp - INFO - 用例 test_groups_auth_error 请求成功。
+2022-07-19 06:52:22,261 - ConfigHttp - INFO - 请求方式：get
+2022-07-19 06:52:22,261 - ConfigHttp - INFO - 请求头：{'Authorization': 'Basic YWRtaW46YWRtaW4xMjM0NTY='}
+2022-07-19 06:52:22,261 - ConfigHttp - INFO - 请求的url：http://127.0.0.1:8081/event/1/
+2022-07-19 06:52:22,386 - ConfigHttp - INFO - 用例 test_event_auth_ok 请求成功。
+2022-07-19 06:52:22,386 - ConfigHttp - INFO - 请求方式：get
+2022-07-19 06:52:22,386 - ConfigHttp - INFO - 请求的url：http://127.0.0.1:8081/guest/1/
+2022-07-19 06:52:22,511 - ConfigHttp - INFO - 用例 test_guest_auth_null 请求成功。

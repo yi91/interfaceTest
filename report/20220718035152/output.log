@@ -1,0 +1,19 @@
+2022-07-18 03:51:52,039 - Email - INFO - 启动logger
+2022-07-18 03:51:52,039 - Email - INFO - 退出logger
+2022-07-18 03:51:53,008 - common_def - INFO - 读取 case_template.xlsx 用例成功
+2022-07-18 03:51:53,039 - ConfigHttp - INFO - 请求头："{"sessionid": "i92wn5cealc4z1omidokrl969i2c99jd"}"
+2022-07-18 03:51:53,039 - ConfigHttp - INFO - 请求的url：http://127.0.0.1:8000/users/1/
+2022-07-18 03:51:53,039 - ConfigHttp - INFO - 请求的json参数：null
+2022-07-18 03:51:53,602 - ConfigHttp - INFO - 请求头："{"Authorization": "Basic YWRtaW46YWRtaW4xMjM0NTY="}"
+2022-07-18 03:51:53,602 - ConfigHttp - INFO - 请求的url：http://127.0.0.1:8000/event/1/
+2022-07-18 03:51:53,602 - ConfigHttp - INFO - 请求的json参数：null
+2022-07-18 03:51:54,196 - ConfigHttp - INFO - 请求头：null
+2022-07-18 03:51:54,196 - ConfigHttp - INFO - 请求的url：http://127.0.0.1:8000/guest/1/
+2022-07-18 03:51:54,196 - ConfigHttp - INFO - 请求的json参数：null
+2022-07-19 02:31:35,595 - common_def - INFO - 获取断言内容为：ef135bce4284s45ab5967fdf22e81fa2
+2022-07-19 02:33:30,146 - common_def - INFO - 获取断言内容为："}, {
+2022-07-19 03:23:14,275 - common_def - INFO - 获取断言内容为：""}, {"code": 200, "message": "登录成功", "token": "ef135bce4284s45ab5967fdf22e81fa2"
+2022-07-19 03:24:48,148 - common_def - INFO - 获取断言内容为："}, {"code": 200, "message": "登录成功", "token": "ef135bce4284s45ab5967fdf22e81fa2
+2022-07-19 03:31:51,474 - common_def - INFO - 获取断言内容为： "}, {"code": 200, "message": "登录成功", "token": "ef135bce4284s45ab5967fdf22e81fa2
+2022-07-19 03:32:36,308 - common_def - INFO - 获取断言内容为： 
+2022-07-19 05:05:13,689 - common_def - INFO - 获取断言内容为：[' ', 'ef135bce4284s45ab5967fdf22e81fa2']

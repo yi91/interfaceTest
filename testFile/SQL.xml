@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<page>
+
+    <database name="guest">
+
+        <table name="sign_event">
+            <sql id="sec_get_event_list">
+                SELECT * FROM sign_event WHERE id=%r or name=%s
+            </sql>
+
+            <sql id="insert_event">
+                INSERT INTO sign_event(`id`, `name`, `limit`, `status`, `address`, `start_time`, `create_time`) VALUES (%s, %s, %s, %s, %s, %s, %s)
+            </sql>
+
+            <sql id="delete_event">
+                DELETE FROM sign_event WHERE id=%r or name=%r
+            </sql>
+
+        </table>
+
+        <table name="sign_guest">
+            <sql id="insert_guest">
+                INSERT INTO sign_guest(`id`, `realname`, `phone`, `email`, `sign`, `event_id`, `create_time`) VALUES (%s, %s, %s, %s, %s, %s, %s)
+            </sql>
+
+            <sql id="delete_guest">
+                DELETE FROM sign_guest WHERE id=%r or realname=%r
+            </sql>
+
+        </table>
+    </database>
+
+    <database name="test">
+
+        <table name="testtable">
+
+            <sql id="select_member">
+                SELECT * FROM rs_member_wallet_bill WHERE member_id=%s
+            </sql>
+
+            <sql id="delete_user">
+                DELETE FROM rs_member WHERE email=%s
+            </sql>
+        </table>
+
+
+    </database>
+</page>

@@ -1,0 +1,19 @@
+# 此处配置runAll需要测试的接口，定制测试内容
+
+#user/testLogin
+#user/testRegister
+#user/testRegisterQuick
+#user/testGenerate
+#user/testLoginFB
+#user/testLogout
+#user/testAccountSetting
+#user/testUpdatePassword
+#user/testUploadImg
+#user/testGetAddressList
+#user/testGetAddress
+#product/testGetProductInfo
+#user/testAddAddress
+#user/testDeleteAddress
+#user/testBlogLogin
+api/test_get_event_list
+api/test_sec_add_event
