@@ -1,0 +1,40 @@
+2022-07-19 07:47:21,311 - common_def - INFO - 读取 case_template.xlsx 用例成功
+2022-07-19 07:47:21,335 - ConfigHttp - INFO - 请求方式：get
+2022-07-19 07:47:21,335 - ConfigHttp - INFO - 请求头：{'Authorization': 'Basic YWRtaW46YWRtaW4xMjM0NTY='}
+2022-07-19 07:47:21,335 - ConfigHttp - INFO - 请求的url：http://127.0.0.1:8081/users/1/
+2022-07-19 07:47:21,477 - ConfigHttp - INFO - 用例 test_users_auth_ok 请求成功。
+2022-07-19 07:47:21,993 - common_def - INFO - 接口测试成功，结果和返回值已写入 excel 
+2022-07-19 07:47:22,063 - ConfigHttp - INFO - 请求方式：get
+2022-07-19 07:47:22,063 - ConfigHttp - INFO - 请求头：{'Authorization': 'Basic YWRtaW46YWRtaW4xMjM0NTY='}
+2022-07-19 07:47:22,063 - ConfigHttp - INFO - 请求的url：http://127.0.0.1:8081/users/4/
+2022-07-19 07:47:22,189 - ConfigHttp - INFO - 用例 test_users4_auth_ok 请求成功。
+2022-07-19 07:47:22,189 - ConfigHttp - INFO - 请求方式：get
+2022-07-19 07:47:22,189 - ConfigHttp - INFO - 请求头：{'sessionid': 'i92wn5cealc4z1omidokrl969i2c99jd'}
+2022-07-19 07:47:22,189 - ConfigHttp - INFO - 请求的url：http://127.0.0.1:8081/groups/1/
+2022-07-19 07:47:22,205 - ConfigHttp - INFO - 用例 test_groups_auth_error 请求成功。
+2022-07-19 07:47:22,205 - ConfigHttp - INFO - 请求方式：get
+2022-07-19 07:47:22,205 - ConfigHttp - INFO - 请求头：{'Authorization': 'Basic YWRtaW46YWRtaW4xMjM0NTY='}
+2022-07-19 07:47:22,205 - ConfigHttp - INFO - 请求的url：http://127.0.0.1:8081/event/1/
+2022-07-19 07:47:22,330 - ConfigHttp - INFO - 用例 test_event_auth_ok 请求成功。
+2022-07-19 07:47:22,330 - ConfigHttp - INFO - 请求方式：get
+2022-07-19 07:47:22,330 - ConfigHttp - INFO - 请求的url：http://127.0.0.1:8081/guest/1/
+2022-07-19 07:47:22,455 - ConfigHttp - INFO - 用例 test_guest_auth_null 请求成功。
+2022-07-19 08:47:24,563 - MyDB - INFO - Connect DB successfully!
+2022-07-19 08:47:24,563 - MyDB - ERROR - sql执行失败，请检查 
+ OperationalError(1364, "Field 'create_time' doesn't have a default value")
+2022-07-19 08:48:22,226 - MyDB - INFO - Database connection closed.
+2022-07-19 08:59:46,750 - MyDB - INFO - Connect DB successfully!
+2022-07-19 08:59:46,766 - MyDB - ERROR - sql执行失败，请检查 
+ TypeError('not all arguments converted during string formatting')
+2022-07-19 08:59:46,766 - MyDB - INFO - Database connection closed.
+2022-07-19 09:01:18,706 - MyDB - INFO - Connect DB successfully!
+2022-07-19 09:01:18,706 - MyDB - ERROR - sql执行失败，请检查 
+ IntegrityError(1062, "Duplicate entry '1-18321110101' for key 'sign_guest_event_id_phone_96bd84df_uniq'")
+2022-07-19 09:01:21,722 - MyDB - INFO - Database connection closed.
+2022-07-19 09:02:39,965 - MyDB - INFO - Connect DB successfully!
+2022-07-19 09:02:39,965 - MyDB - INFO - Database connection closed.
+2022-07-19 09:08:23,454 - MyDB - INFO - Connect DB successfully!
+2022-07-19 09:08:23,491 - MyDB - INFO - sql执行成功 INSERT INTO `guest`.`sign_guest`(`realname`, `phone`, `email`, `sign`, `event_id`) VALUES ('wowo', '18331310101', 'wowo@mail.com', 0, 1);
+2022-07-19 09:08:23,491 - MyDB - INFO - Database connection closed.
+2022-07-19 09:09:52,015 - MyDB - INFO - Connect DB successfully!
+2022-07-19 09:09:52,028 - MyDB - INFO - sql执行成功 INSERT INTO `guest`.`sign_guest`(`realname`, `phone`, `email`, `sign`, `event_id`) VALUES ('wowo', '18331310101', 'wowo@mail.com', 0, 1);

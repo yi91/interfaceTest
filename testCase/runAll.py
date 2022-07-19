@@ -3,7 +3,7 @@
 import os
 import unittest
 from datetime import datetime
-from common.HTMLTestRunner import HTMLTestRunner
+from XTestRunner import HTMLTestRunner
 from common.read_config import ReadConfig
 rc = ReadConfig()
 # 创建 report_path
@@ -23,68 +23,8 @@ class AllTest:
         on_off = rc.get_email("on_off")
         self.email = Email()
 
-        # self.caseFile = proDir + '\\testCase\\case_data\\'
-        # self.caseList = []
 
 """
-    def set_case_list(self):
-
-        fb = open(self.caseListFile)
-        for value in fb.readlines():
-            data = str(value)
-            # 过滤掉caselist文件中#注释的
-            if data != '' and not data.startswith("#"):
-                self.caseList.append(data.replace("\n", ""))
-        fb.close()
-
-
-    def set_case_suite(self):
-        
-        test_suite = unittest.TestSuite()
-        suite_module = []
-
-        for case in self.caseList:
-            case_name = case.split("/")[-1]
-            print(case_name+".py")
-            '''
-            discover(start_dir,pattern='test*.py',top_level_dir=None)
-                start_dir：要测试的模块名或测试用例的目录
-                pattern：表示用例文件名的匹配原则，默认test*.py的文件，重写pattern可以覆盖
-                top_level_dir=None ：测试模块的顶层目录，如果没有顶层目录，默认为None
-            '''
-            # start_dir定的位置过高，会导致suite_module存在过多空testsuite
-            start_dir = self.caseFile + '\\' + case.split("/")[0]
-            discover = unittest.defaultTestLoader.discover(start_dir, pattern=case_name + '.py', top_level_dir=None)
-            suite_module.append(discover)
-
-        if len(suite_module) > 0:
-            # 注意层级
-            for disc in suite_module:
-                for suite in disc:
-                    for test_case in suite:
-                        test_suite.addTests(test_case)
-        else:
-            return None
-
-        return test_suite
-
-    def run(self):
-
-        fp = open(resultPath, 'wb')
-        try:
-            suit = self.set_case_suite()
-            if suit is not None:
-                logger.info("********TEST START********")
-                runner = HTMLTestRunner.HTMLTestRunner(stream=fp, title='Test Report', description='Test Description')
-                runner.run(suit)
-            else:
-                logger.info("Have no case_data to test.")
-        except Exception as ex:
-            logger.error(str(ex))
-        finally:
-            logger.info("*********TEST END*********")
-            # 注意fp需要提前声明
-            fp.close()
 
             # send test report by email
             if on_off == 'on':

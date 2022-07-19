@@ -1,18 +1,18 @@
 # coding:utf-8
 
 import pymysql.cursors
-from common import read_config as readConfig
-from common.logger import MyLog
+from common.read_config import ReadConfig
+from common.logger import Log
 
-rc = readConfig.ReadConfig()
-logger = MyLog.logger('MyDB')
+rc = ReadConfig()
+logger = Log('MyDB').get_logger()
 
 
 class MyDB:
 
     def __init__(self):
         try:
-            # 打开数据库连接
+            # 创建数据库连接
             self.db = pymysql.connect(host=rc.get_db("host"),
                                       user=rc.get_db("username"),
                                       password=rc.get_db("password"),
@@ -24,17 +24,18 @@ class MyDB:
             self.cursor = self.db.cursor()
             logger.info("Connect DB successfully!")
         except Exception as e:
-            logger.error('数据库连接失败，请检查 \n %r' % e)
+            logger.error('数据库连接失败，请检查', e)
 
-    def execute_sql(self, sql, params):
+    # 获取sql执行完的self.cursor
+    def execute_sql(self, sql):
         # 先执行 db.ping(reconnect=True)，可以保证连接丢失时自动重连
         self.db.ping(reconnect=True)
         try:
-            # 使用 execute()方法执行SQL查询，多个参数传入时需要用集合形式如 list或者tuple 等，查询和删除的返回值是结果的条数
-            self.cursor.execute(sql, params)
+            # 使用 execute()方法执行SQL，insert返回结果是dic类型的cursor，delete的返回值是执行结果的条数
+            self.cursor.execute(sql)
             # 手动提交执行
             self.db.commit()
-            logger.info('sql执行成功：%s' % sql)
+            logger.info('sql执行成功 {}'.format(sql))
         except Exception as e:
             logger.error('sql执行失败，请检查 \n %r' % e)
         finally:
@@ -43,7 +44,7 @@ class MyDB:
 
     @staticmethod
     def get_all(cursor):
-        """ 查询数据库所有记录 """
+        """ 以list形式返回select语句执行完的结果，每行结果以dic形式当作list的元素 """
         value = cursor.fetchall()
         return value
 

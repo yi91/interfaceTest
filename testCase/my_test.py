@@ -6,6 +6,7 @@ from xlwings import App
 import common.common_def as cd
 from common.read_config import ReadConfig
 import datetime, time
+from common.config_db import MyDB
 
 case = []
 path = r'D:\Program Files\JetBrains\Projects\pythonProjects\interfaceTest\testFile\case_data\case_template.xlsx'
@@ -81,8 +82,18 @@ def my_re():
     print(v)
 
 
+def test_db():
+    sql = "INSERT INTO `guest`.`sign_guest`(`realname`, `phone`, `email`, `sign`, `event_id`) " \
+          "VALUES ('wowo', '18331310101', 'wowo@mail.com', 0, 1);"
+    db = MyDB()
+    execute_sql = db.execute_sql(sql)
+    print(execute_sql)
+    db.close_db()
+
+
 if __name__ == '__main__':
     # xlwings_read()
-    send_request()
+    # send_request()
     # print(time.time())
+    test_db()
 
