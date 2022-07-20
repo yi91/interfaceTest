@@ -1,4 +1,6 @@
 # coding:utf-8
+import os.path
+
 from common.read_config import ReadConfig
 from common.logger import Log
 import common.common_def as cd
@@ -27,7 +29,7 @@ class ConfigHttp:
         return self.url
 
     def set_method(self, method):
-        self.method = method
+        self.method = method.lower()
         logger.info('请求方式：%s' % self.method)
         return self.method
 
@@ -56,6 +58,12 @@ class ConfigHttp:
                 self.data = eval(data)
             logger.info('请求的json参数：%s' % self.data)
         return self.data
+
+    def set_file(self, file):
+        if os.path.isfile(file):
+            self.file = file
+            logger.info('文件校验成功')
+        return self.file
 
     def get(self, case_name):
         """ 封装get请求 """
@@ -93,6 +101,10 @@ class ConfigHttp:
         else:
             self.post(case_name)
 
+    def send_request(self, case_name):
+        """ 特殊请求方式，如 put， del等"""
+        pass
+
     def dubbo(self, case_name):
         """ 封装dubbo类型的接口
         # 初始化dubbo对象
@@ -113,35 +125,6 @@ class ConfigHttp:
         return json.dumps(result, sort_keys=True, indent=4, separators=(',', ': '), skipkeys=True, ensure_ascii=False)
         """
         pass
-
-    def send_request(self, method, url, headers=None, data=None, **kwargs):
-        if headers is not None:
-            headers = json.dumps(headers).lower()
-        if isinstance(data, str):
-            try:
-                # 将字符串类型的 data 转成json对象，如果data里面有特殊符号，就使用 eval 转换
-                data = json.loads(data)
-            except Exception:
-                # json.loads无法处理字符串元素有特殊符号，所以使用eval
-                data = eval(data)
-        if 'get' == method.lower():
-            response = requests.get(url=url, headers=headers, params=data, **kwargs)
-        elif 'post' == method.lower():
-            if headers is None:
-                response = requests.post(url=url, data=data, **kwargs)
-            elif 'application/x-www-form-urlencode' in headers:
-                headers = json.loads(headers)
-                response = requests.post(url=url, headers=headers, data=data, **kwargs)
-            elif 'application/json' in headers:
-                headers = json.loads(headers)
-                response = requests.post(url=url, headers=headers, json=data, **kwargs)
-            else:
-                # 如果headers不属于以上任何一种，就调用下面的方法
-                headers = json.loads(headers)
-                response = requests.request(method=method, url=url, headers=headers, **kwargs)
-        else:
-            raise ValueError('request method "{}" error ! please check.'.format(method))
-        return response
 
 
 if __name__ == "__main__":

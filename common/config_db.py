@@ -35,6 +35,7 @@ class MyDB:
             self.cursor.execute(sql)
             # 手动提交执行
             self.db.commit()
+            # 打印sql时，必须用format，否则logging报错
             logger.info('sql执行成功 {}'.format(sql))
         except Exception as e:
             logger.error('sql执行失败，请检查 \n %r' % e)

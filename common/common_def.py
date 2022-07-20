@@ -15,14 +15,6 @@ logger = Log('common_def').get_logger()
 pro_dir = os.path.dirname(os.path.dirname(__file__))
 
 
-def my_base64(string):
-    """ 定义auth的加密方法
-    base64.b64encode(string.encode('utf-8'))得到的是byte类型str，b'YWJjcjM0cjM0NHI='
-    只想要获得YWJjcjM0cjM0NHI=，再将byte转换回去就好了
-    """
-    return str(base64.b64encode(string.encode('utf-8')), 'utf-8')
-
-
 def get_token():
     """ 获取接口需要的token """
     token = rc.get_header('token')
@@ -68,21 +60,21 @@ def write_resp_to_excel(xlsx_name, case_name, response, msg):
             # 遍历excel内所有数据，每行作为一条用例存放于测试结果和response
             for r in range(ran[0] - 1):
                 # 找到正在测试的用例名称
-                if sheet[r + 1, 1].value.lower() == case_name:
+                if sheet[r + 1, 1].value == case_name:
                     # 必须先判断response为null的情况
                     if response is None:
                         # 任何错误导致的response为null，都当请求失败处理
-                        sheet[r + 1, 7].value = 'fail'
-                        sheet[r + 1, 8].value = '请求参数有误，返回值是None'
+                        sheet[r + 1, 8].value = 'fail'
+                        sheet[r + 1, 9].value = '请求参数有误，返回值是None'
                         logger.info('接口测试失败，请检查 excel 内的 response')
                     # 判断状态码和断言信息
                     elif response.status_code == 200 and (msg in response.text):
-                        sheet[r + 1, 7].value = 'success'
-                        sheet[r + 1, 8].value = response.text
+                        sheet[r + 1, 8].value = 'success'
+                        sheet[r + 1, 9].value = response.text
                         logger.info('接口测试成功，结果和返回值已写入 excel ')
                     else:
-                        sheet[r + 1, 7].value = 'fail'
-                        sheet[r + 1, 8].value = response.text
+                        sheet[r + 1, 8].value = 'fail'
+                        sheet[r + 1, 9].value = response.text
                         logger.info('断言失败，请检查 excel 内的 response')
                     # 一旦找到，跳出循环
                     break
@@ -110,16 +102,16 @@ def get_xlsx(xlsx_name):
             ran = sheet.used_range.shape
             # 遍历excel内所有数据，每行作为一条用例存放于case_list
             for r in range(ran[0] - 1):
-                # 如果用例不需要执行，则跳过
-                if sheet[r + 1, 6] is None or sheet[r + 1, 6].value.lower() == 'n':
+                # 判断用例是否需要执行，不需要则跳过
+                if sheet[r + 1, 7] is None or sheet[r + 1, 7].value in ['n', 'N']:
                     continue
                 case = []
-                for l in range(ran[1] - 1):
-                    # sheet[r + 1, l + 1] 从A2开始取数据，空单元格默认赋值 None，避免xlwings丢失空单元格数据
-                    if sheet[r + 1, l + 1] is None:
+                for l in range(ran[1] - 2):
+                    # sheet[r + 1, l + 1] 从A3开始取数据，空单元格默认赋值 None，避免xlwings丢失空单元格数据
+                    if sheet[r + 1, l + 2] is None:
                         case.append(None)
                     else:
-                        case.append(sheet[r + 1, l + 1].value)
+                        case.append(sheet[r + 1, l + 2].value)
                 case_list.append(case)
             logger.info('读取 %s 用例成功' % xlsx_name)
         except Exception as e:
