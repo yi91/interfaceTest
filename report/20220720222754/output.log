@@ -1,0 +1,15 @@
+2022-07-20 22:27:56,004 - common_def - INFO - 读取 case_django_test.xlsx 用例成功
+2022-07-20 22:27:56,039 - ConfigHttp - INFO - 请求的url：http://127.0.0.1:8081/users/1/
+2022-07-20 22:27:56,039 - ConfigHttp - INFO - 请求头：{'Authorization': 'Basic YWRtaW46YWRtaW4xMjM0NTY='}
+2022-07-20 22:27:56,190 - ConfigHttp - INFO - 用例 test_users_auth_ok 请求成功。
+2022-07-20 22:27:56,852 - ConfigHttp - INFO - 请求的url：http://127.0.0.1:8081/users/4/
+2022-07-20 22:27:56,852 - ConfigHttp - INFO - 请求头：{'Authorization': 'Basic YWRtaW46YWRtaW4xMjM0NTY='}
+2022-07-20 22:27:56,998 - ConfigHttp - INFO - 用例 test_users4_auth_ok 请求成功。
+2022-07-20 22:27:57,000 - ConfigHttp - INFO - 请求的url：http://127.0.0.1:8081/groups/1/
+2022-07-20 22:27:57,001 - ConfigHttp - INFO - 请求头：{'sessionid': 'i92wn5cealc4z1omidokrl969i2c99jd'}
+2022-07-20 22:27:57,023 - ConfigHttp - INFO - 用例 test_groups_auth_error 请求成功。
+2022-07-20 22:27:57,023 - ConfigHttp - INFO - 请求的url：http://127.0.0.1:8081/event/1/
+2022-07-20 22:27:57,023 - ConfigHttp - INFO - 请求头：{'Authorization': 'Basic YWRtaW46YWRtaW4xMjM0NTY='}
+2022-07-20 22:27:57,178 - ConfigHttp - INFO - 用例 test_event_auth_ok 请求成功。
+2022-07-20 22:27:57,178 - ConfigHttp - INFO - 请求的url：http://127.0.0.1:8081/guest/1/
+2022-07-20 22:27:57,345 - ConfigHttp - INFO - 用例 test_guest_auth_null 请求成功。

@@ -46,7 +46,7 @@ if __name__ == '__main__':
 
     # 测试完成删除测试数据
     # businessCommon.del_init()
-    suit = unittest.TestLoader().discover(start_dir='django_test', top_level_dir=proDir)
+    suit = unittest.TestLoader().discover(start_dir='api_guest', top_level_dir=proDir)
     # 必须 wb 打开方式
     with open(report_path + 'report.html', 'wb+') as fp:
         runner = HTMLTestRunner(fp, title='Test Report', description='Test Description')

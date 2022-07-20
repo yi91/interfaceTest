@@ -5,12 +5,12 @@ from common.config_http import ConfigHttp
 
 
 ch = ConfigHttp()
-case_list = cc.get_xlsx('case_template.xlsx')
+case_list = cc.get_xlsx('case_django_rest.xlsx')
 
 
 @paramunittest.parametrized(*case_list)
 class TestAllCase(unittest.TestCase):
-    """ 测试 django_test 的 users 接口 """
+    """ 测试 api_django_rest 的 users 接口 """
     def setParameters(self, case_name, method, header, url, data, is_run, result,
                       response, msg, insert_sql, del_sql):
         """ 方法名必须是setParameters """
@@ -32,7 +32,13 @@ class TestAllCase(unittest.TestCase):
         if self.method == 'get':
             self.r = ch.get(self.case_name)
         elif self.method == 'post':
-            self.r = ch.post(self.case_name)
+            if self.header is None or ('multipart/form-data' in self.header):
+                self.r = ch.post(self.case_name)
+            elif 'application/json' in self.header:
+                self.r = ch.post_json(self.case_name)
+            else:
+                # 待完善，还有问题
+                self.r = ch.post_with_file(self.case_name)
         elif self.method == 'dubbo':
             self.r = ch.dubbo(self.case_name)
         else:
@@ -44,7 +50,7 @@ class TestAllCase(unittest.TestCase):
         else:
             self.assertIn(self.msg, self.r.text)
             self.assertEqual(self.r.status_code, 200)
-        cc.write_resp_to_excel('case_template.xlsx', self.case_name, self.r, self.msg)
+        cc.write_resp_to_excel('case_django_rest.xlsx', self.case_name, self.r, self.msg)
 
 
 

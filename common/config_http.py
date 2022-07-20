@@ -13,7 +13,8 @@ logger = Log('ConfigHttp').get_logger()
 
 class ConfigHttp:
 
-    host = rc.get_http("base_url")
+    # host = rc.get_http("base_url")
+    host = rc.get_http("guest_base_url")
     timeout = rc.get_http("timeout")
 
     def __init__(self):
@@ -80,6 +81,16 @@ class ConfigHttp:
         """ 封装 post请求 """
         try:
             response = requests.post(self.url, headers=self.headers, data=self.data, timeout=float(self.timeout))
+            logger.info('用例 %s 请求成功。' % case_name)
+            return response
+        except Exception as e:
+            logger.error('用例 %s 请求错误' % case_name, e)
+            return e
+
+    def post_json(self, case_name):
+        """ 封装发送json格式数据 post请求 """
+        try:
+            response = requests.post(self.url, headers=self.headers, json=self.data, timeout=float(self.timeout))
             logger.info('用例 %s 请求成功。' % case_name)
             return response
         except Exception as e:

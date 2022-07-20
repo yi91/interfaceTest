@@ -3,13 +3,13 @@ import json
 import requests
 from requests.auth import HTTPBasicAuth
 from xlwings import App
-import common.common_def as cd
+# import common.common_def as cd
 from common.read_config import ReadConfig
 import datetime, time
-from common.config_db import MyDB
+# from common.config_db import MyDB
 
 case = []
-path = r'D:\Program Files\JetBrains\Projects\pythonProjects\interfaceTest\testFile\case_data\case_template.xlsx'
+path = r'/testFile/case_data/case_django_rest.xlsx'
 
 
 def xlwings_read():
@@ -58,7 +58,7 @@ def send_request():
     except Exception as e:
         print('请求地址错误', e)
 
-    # cd.write_resp_to_excel('case_template.xlsx', 'test_users_auth_error', resp)
+    # cd.write_resp_to_excel('case_django_rest.xlsx', 'test_users_auth_error', resp)
 
 
 def my_re():
@@ -95,5 +95,9 @@ if __name__ == '__main__':
     # xlwings_read()
     # send_request()
     # print(time.time())
-    test_db()
+    # test_db()
+    a = [[1, 2], ['a', 'b']]
+    b = map(lambda x: x, a)
+    print(b.__next__())
+    print(b.__iter__())
 

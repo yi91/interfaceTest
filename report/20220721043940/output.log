@@ -1,0 +1,5 @@
+2022-07-21 04:39:40,876 - common_def - INFO - 读取 case_guest.xlsx 用例成功
+2022-07-21 04:39:40,898 - ConfigHttp - INFO - 请求方式：post
+2022-07-21 04:39:40,898 - ConfigHttp - INFO - 请求的url：http://127.0.0.1:8000/api/user_sign/
+2022-07-21 04:39:40,898 - ConfigHttp - INFO - 请求的json参数：{'eid': '1', 'phone': '18321110101'}
+2022-07-21 04:39:44,771 - ConfigHttp - INFO - 用例 test_user_sign_ok 请求成功。

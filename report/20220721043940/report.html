@@ -497,7 +497,7 @@
                             <div class="flex-1">
                                 <div class="d-flex align-items-center mb-1">Start time - End time</div>
                                 <div class="d-flex align-items-center">
-                                    <div class="text-sm text-muted line-clamp-1 me-auto">2022-07-20 09:17:35 - 2022-07-20 09:17:36</div>
+                                    <div class="text-sm text-muted line-clamp-1 me-auto">2022-07-21 04:39:40 - 2022-07-21 04:39:45</div>
                                 </div>
                             </div>
                         </div>
@@ -505,7 +505,7 @@
                             <div class="flex-1">
                                 <div class="d-flex align-items-center mb-1">Duration</div>
                                 <div class="d-flex align-items-center">
-                                    <div class="text-sm text-muted line-clamp-1 me-auto">0:00:01.109</div>
+                                    <div class="text-sm text-muted line-clamp-1 me-auto">0:00:04.472</div>
                                 </div>
                             </div>
                         </div>
@@ -515,7 +515,7 @@
                                 <div class="d-flex align-items-center">
                                     <div class="text-sm text-muted line-clamp-1 me-auto">
                                         <span class="badge badge-pill bg-soft-success text-success me-2">Passed:1</span>
-                                        <span class="badge badge-pill bg-soft-warning text-warning me-2">Failed:4</span>
+                                        <span class="badge badge-pill bg-soft-warning text-warning me-2">Failed:0</span>
                                         <span class="badge badge-pill bg-soft-danger text-danger me-2">Errors:0</span>
                                         <span class="badge badge-pill bg-soft-secondary text-secondary me-2">Skipped:0</span>
                                     </div>
@@ -547,13 +547,13 @@
                         </div>
                     </div>
                     <div class="mt-2 mb-0 text-sm">
-                        <span class="badge badge-pill bg-soft-success text-success me-2">20.00%</span>
+                        <span class="badge badge-pill bg-soft-success text-success me-2">100.00%</span>
                         <span class="text-nowrap text-xs text-muted">Pass rate</span>
                     </div>
                     <div class="d-flex align-items-center">
                         <div class="progress" style="width:70%; margin-top: 5px;">
                             <div class="progress-bar bg-success" role="progressbar" aria-valuenow="83" aria-valuemin="0"
-                                aria-valuemax="100" style="width:20.00%"></div>
+                                aria-valuemax="100" style="width:100.00%"></div>
                         </div>
                     </div>
                 </div>
@@ -562,19 +562,19 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col"><span class="h6 font-semibold text-muted text-sm d-block mb-2">Failed</span>
-                            <span class="h3 font-bold mb-0">4</span></div>
+                            <span class="h3 font-bold mb-0">0</span></div>
                         <div class="col-auto">
                             <div class="icon icon-shape bg-warning text-white text-lg rounded-circle">F</div>
                         </div>
                     </div>
                     <div class="mt-2 mb-0 text-sm">
-                        <span class="badge badge-pill bg-soft-warning text-warning me-2">80.00%</span>
+                        <span class="badge badge-pill bg-soft-warning text-warning me-2">0.00%</span>
                         <span class="text-nowrap text-xs text-muted">Failure rate</span>
                     </div>
                     <div class="d-flex align-items-center">
                         <div class="progress" style="width:70%; margin-top: 5px;">
                             <div class="progress-bar bg-warning" role="progressbar" aria-valuenow="83" aria-valuemin="0"
-                                aria-valuemax="100" style="width:80.00%"></div>
+                                aria-valuemax="100" style="width:0.00%"></div>
                         </div>
                     </div>
                 </div>
@@ -680,233 +680,9 @@
         <div></div>
     </td>
     <td style="color: #495057">
-        <div>0.7 s</div>
+        <div>4.47 s</div>
     </td>
     <td colspan='5' align='center'>pass</td>
-    <td></td>
-</tr>
-
-<tr class='failClass'>
-    <td>paramunittest.TestAllCase_1</td>
-    <td></td>
-    <td></td>
-    <td>1</td>
-    <td>0</td>
-    <td>1</td>
-    <td>0</td>
-    <td><a href="javascript:showClassDetail('c1.2',1)">Detail</a></td>
-    <td>&nbsp;</td>
-</tr>
-
-<tr id='ft1.2.1' class='none'>
-    <td class='failCase'>
-        <div class='testcase'>test_all_case</div>
-    </td>
-    <td style="color: #495057">
-        <div></div>
-    </td>
-    <td style="color: #495057">
-        <div>0.13 s</div>
-    </td>
-    <td colspan='5' align='center' class='caseStatistics'>
-        <!--css div popup start-->
-        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_ft1.2.1')">fail</a>
-        <div id='div_ft1.2.1' class="modal show" style="display: none; background-color: #000000c7;">
-            <div class="modal-dialog modal-dialog-centered log_window">
-                <div class="modal-content shadow-3">
-                    <div class="modal-header">
-                        <div>
-                            <h5 class="mb-1">test_all_case</h5>
-                        </div>
-                        <div>
-                            <h5 class="mb-1">detailed log</h5>
-                        </div>
-                        <div>
-                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_ft1.2.1')">X</button>
-                        </div>
-                    </div>
-                    <div class="modal-body">
-                        <div>
-                            <pre>ft1.2.1: Traceback (most recent call last):
-  File "D:\Program Files\JetBrains\Projects\pythonProjects\interfaceTest\testCase\django_test\test_all_case.py", line 46, in test_all_case
-    self.assertEqual(self.r.status_code, 200)
-AssertionError: 404 != 200
-</pre>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--css div popup end-->
-    </td>
-    <td></td>
-</tr>
-
-<tr class='failClass'>
-    <td>paramunittest.TestAllCase_2</td>
-    <td></td>
-    <td></td>
-    <td>1</td>
-    <td>0</td>
-    <td>1</td>
-    <td>0</td>
-    <td><a href="javascript:showClassDetail('c1.3',1)">Detail</a></td>
-    <td>&nbsp;</td>
-</tr>
-
-<tr id='ft1.3.1' class='none'>
-    <td class='failCase'>
-        <div class='testcase'>test_all_case</div>
-    </td>
-    <td style="color: #495057">
-        <div></div>
-    </td>
-    <td style="color: #495057">
-        <div>0.03 s</div>
-    </td>
-    <td colspan='5' align='center' class='caseStatistics'>
-        <!--css div popup start-->
-        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_ft1.3.1')">fail</a>
-        <div id='div_ft1.3.1' class="modal show" style="display: none; background-color: #000000c7;">
-            <div class="modal-dialog modal-dialog-centered log_window">
-                <div class="modal-content shadow-3">
-                    <div class="modal-header">
-                        <div>
-                            <h5 class="mb-1">test_all_case</h5>
-                        </div>
-                        <div>
-                            <h5 class="mb-1">detailed log</h5>
-                        </div>
-                        <div>
-                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_ft1.3.1')">X</button>
-                        </div>
-                    </div>
-                    <div class="modal-body">
-                        <div>
-                            <pre>ft1.3.1: Traceback (most recent call last):
-  File "D:\Program Files\JetBrains\Projects\pythonProjects\interfaceTest\testCase\django_test\test_all_case.py", line 45, in test_all_case
-    self.assertIn(self.msg, self.r.text)
-AssertionError: '200' not found in '{"detail":"Authentication credentials were not provided."}'
-</pre>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--css div popup end-->
-    </td>
-    <td></td>
-</tr>
-
-<tr class='failClass'>
-    <td>paramunittest.TestAllCase_3</td>
-    <td></td>
-    <td></td>
-    <td>1</td>
-    <td>0</td>
-    <td>1</td>
-    <td>0</td>
-    <td><a href="javascript:showClassDetail('c1.4',1)">Detail</a></td>
-    <td>&nbsp;</td>
-</tr>
-
-<tr id='ft1.4.1' class='none'>
-    <td class='failCase'>
-        <div class='testcase'>test_all_case</div>
-    </td>
-    <td style="color: #495057">
-        <div></div>
-    </td>
-    <td style="color: #495057">
-        <div>0.12 s</div>
-    </td>
-    <td colspan='5' align='center' class='caseStatistics'>
-        <!--css div popup start-->
-        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_ft1.4.1')">fail</a>
-        <div id='div_ft1.4.1' class="modal show" style="display: none; background-color: #000000c7;">
-            <div class="modal-dialog modal-dialog-centered log_window">
-                <div class="modal-content shadow-3">
-                    <div class="modal-header">
-                        <div>
-                            <h5 class="mb-1">test_all_case</h5>
-                        </div>
-                        <div>
-                            <h5 class="mb-1">detailed log</h5>
-                        </div>
-                        <div>
-                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_ft1.4.1')">X</button>
-                        </div>
-                    </div>
-                    <div class="modal-body">
-                        <div>
-                            <pre>ft1.4.1: Traceback (most recent call last):
-  File "D:\Program Files\JetBrains\Projects\pythonProjects\interfaceTest\testCase\django_test\test_all_case.py", line 45, in test_all_case
-    self.assertIn(self.msg, self.r.text)
-AssertionError: '"url":"http://127.0.0.1:8081/users/1/"' not found in '{"url":"http://127.0.0.1:8081/event/1/","name":"锤子手机发布会","address":"北京会展中心","start_time":"2017-02-11T13:22:00Z","limit":2000,"status":true}'
-</pre>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--css div popup end-->
-    </td>
-    <td></td>
-</tr>
-
-<tr class='failClass'>
-    <td>paramunittest.TestAllCase_4</td>
-    <td></td>
-    <td></td>
-    <td>1</td>
-    <td>0</td>
-    <td>1</td>
-    <td>0</td>
-    <td><a href="javascript:showClassDetail('c1.5',1)">Detail</a></td>
-    <td>&nbsp;</td>
-</tr>
-
-<tr id='ft1.5.1' class='none'>
-    <td class='failCase'>
-        <div class='testcase'>test_all_case</div>
-    </td>
-    <td style="color: #495057">
-        <div></div>
-    </td>
-    <td style="color: #495057">
-        <div>0.13 s</div>
-    </td>
-    <td colspan='5' align='center' class='caseStatistics'>
-        <!--css div popup start-->
-        <a class="popup_link" href="javascript:void(0)" onclick="showLog('div_ft1.5.1')">fail</a>
-        <div id='div_ft1.5.1' class="modal show" style="display: none; background-color: #000000c7;">
-            <div class="modal-dialog modal-dialog-centered log_window">
-                <div class="modal-content shadow-3">
-                    <div class="modal-header">
-                        <div>
-                            <h5 class="mb-1">test_all_case</h5>
-                        </div>
-                        <div>
-                            <h5 class="mb-1">detailed log</h5>
-                        </div>
-                        <div>
-                            <button type="button" class="btn btn-sm btn-square bg-tertiary bg-opacity-20 bg-opacity-100-hover text-tertiary text-white-hover" data-bs-dismiss="modal" onclick="hideLog('div_ft1.5.1')">X</button>
-                        </div>
-                    </div>
-                    <div class="modal-body">
-                        <div>
-                            <pre>ft1.5.1: Traceback (most recent call last):
-  File "D:\Program Files\JetBrains\Projects\pythonProjects\interfaceTest\testCase\django_test\test_all_case.py", line 45, in test_all_case
-    self.assertIn(self.msg, self.r.text)
-AssertionError: '403' not found in '{"detail":"Not found."}'
-</pre>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--css div popup end-->
-    </td>
     <td></td>
 </tr>
 
@@ -915,9 +691,9 @@ AssertionError: '403' not found in '{"detail":"Not found."}'
     </div>
     <div class="card-footer border-0 py-5">
         <span class="text-muted text-sm">Cases Total:
-            <button type="button" class="btn btn-sm bg-dark bg-opacity-20 bg-opacity-100-hover text-dark text-white-hover">5</button> =
+            <button type="button" class="btn btn-sm bg-dark bg-opacity-20 bg-opacity-100-hover text-dark text-white-hover">1</button> =
             <button type="button" class="btn btn-sm bg-success bg-opacity-20 bg-opacity-100-hover text-success text-white-hover">1</button> +
-            <button type="button" class="btn btn-sm bg-warning bg-opacity-20 bg-opacity-100-hover text-warning text-white-hover">4</button> +
+            <button type="button" class="btn btn-sm bg-warning bg-opacity-20 bg-opacity-100-hover text-warning text-white-hover">0</button> +
             <button type="button" class="btn btn-sm bg-danger bg-opacity-20 bg-opacity-100-hover text-danger text-white-hover">0</button> +
             <button type="button" class="btn btn-sm bg-secondary bg-opacity-20 bg-opacity-100-hover text-secondary text-white-hover">0</button>
         </span>
