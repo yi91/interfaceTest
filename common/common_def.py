@@ -60,7 +60,7 @@ def write_resp_to_excel(xlsx_name, case_name, response, msg):
             # 遍历excel内所有数据，每行作为一条用例存放于测试结果和response
             for r in range(ran[0] - 1):
                 # 找到正在测试的用例名称
-                if sheet[r + 1, 1].value == case_name:
+                if sheet[r + 1, 2].value == case_name:
                     # 必须先判断response为null的情况
                     if response is None:
                         # 任何错误导致的response为null，都当请求失败处理

@@ -44,13 +44,17 @@ class TestAllCase(unittest.TestCase):
         else:
             # 如果method不属于以上任何一种，就调用下面的方法
             self.r = ch.send_request(self.case_name)
+
+        cc.write_resp_to_excel('case_django_rest.xlsx', self.case_name, self.r, self.msg)
+
         # 请求结束，开始断言并写入结果到excel
         if self.r is None:
             self.assertEqual(1, 2)
         else:
             self.assertIn(self.msg, self.r.text)
             self.assertEqual(self.r.status_code, 200)
-        cc.write_resp_to_excel('case_django_rest.xlsx', self.case_name, self.r, self.msg)
+
+
 
 
 
