@@ -1,5 +1,5 @@
 import json
-import unittest
+# import unittest
 
 import paramunittest
 # import requests
@@ -10,7 +10,7 @@ from common.read_config import ReadConfig
 import datetime, time
 # from common.config_db import MyDB
 from ddt import ddt, data, unpack
-from XTestRunner import HTMLTestRunner
+# from XTestRunner import HTMLTestRunner
 
 # case = []
 # path = r'/testFile/case_data/case_django_rest.xlsx'
@@ -63,7 +63,7 @@ def send_request():
         print('请求地址错误', e)
 
     # cd.write_resp_to_excel('case_django_rest.xlsx', 'test_users_auth_error', resp)
-'''
+
 
 def my_re():
     # jo = {
@@ -84,7 +84,7 @@ def my_re():
     ]}
     # v = cd.get_value_from_response(json.dumps(jo, ensure_ascii=False), 'token')
     # print(v)
-
+'''
 '''
 def test_db():
     sql = "INSERT INTO `guest`.`sign_guest`(`realname`, `phone`, `email`, `sign`, `event_id`) " \
@@ -141,7 +141,7 @@ class BB:
 
 # bbb = BB()
 cl = get_xlsx()
-'''
+
 
 @ddt
 class AA(unittest.TestCase):
@@ -173,7 +173,7 @@ class AA(unittest.TestCase):
     @classmethod
     def tearDownClass(cls) -> None:
         print('tearDownClass：')
-
+'''
 
 if __name__ == '__main__':
     # xlwings_read()
@@ -185,7 +185,7 @@ if __name__ == '__main__':
     b = map(lambda x: x, a)
     print(b.__next__())
     print(b.__iter__())
-    '''
+    
     # case_list = get_xlsx('case_guest.xlsx')
     fp = open(r'D:\Program Files\JetBrains\Projects\pythonProjects\interfaceTest\testCase\aaa\report.html', 'wb+')
     s_dir = r'D:\Program Files\JetBrains\Projects\pythonProjects\interfaceTest\testCase\aaa'
@@ -193,6 +193,9 @@ if __name__ == '__main__':
     runner = HTMLTestRunner(fp)
     runner.run(suite)
     fp.close()
+    '''
+
+
 
 
 

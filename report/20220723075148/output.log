@@ -1,0 +1,71 @@
+2022-07-23 07:51:48,513 - MyDB - INFO - Connect DB successfully!
+2022-07-23 07:51:49,029 - common_def - INFO - 打开excel，准备开始测试
+2022-07-23 07:51:49,435 - common_def - INFO - 读取用例excel成功
+2022-07-23 07:51:49,435 - ConfigHttp - INFO - ------------------- TestCase Start --------------------
+2022-07-23 07:51:49,435 - ConfigHttp - INFO - 请求方式：post
+2022-07-23 07:51:49,435 - ConfigHttp - INFO - 请求的url：http://127.0.0.1:8000/api/add_event/
+2022-07-23 07:51:49,435 - ConfigHttp - INFO - 请求的json参数：{'eid': '11', 'name': '', 'limit': '', 'status': ''}
+2022-07-23 07:51:49,451 - ConfigHttp - INFO - 用例 test_add_event_param_null 请求成功。
+2022-07-23 07:51:49,451 - ConfigHttp - INFO - ------------------- TestCase test_add_event_param_null End --------------------
+2022-07-23 07:51:49,466 - common_def - INFO - 接口测试成功，结果和返回值已写入 excel 
+2022-07-23 07:51:49,466 - ConfigHttp - INFO - ------------------- TestCase Start --------------------
+2022-07-23 07:51:49,466 - ConfigHttp - INFO - 请求方式：post
+2022-07-23 07:51:49,466 - ConfigHttp - INFO - 请求的url：http://127.0.0.1:8000/api/add_event/
+2022-07-23 07:51:49,466 - ConfigHttp - INFO - 请求的json参数：{'eid': '11', 'name': '包子烧卖我喜欢', 'limit': '1000', 'status': '', 'address': '哪里都有', 'start_time': '2020-01-01 12:12:12'}
+2022-07-23 07:51:49,466 - ConfigHttp - INFO - 用例 test_add_event_ok 请求成功。
+2022-07-23 07:51:49,482 - ConfigHttp - INFO - ------------------- TestCase test_add_event_ok End --------------------
+2022-07-23 07:51:49,498 - common_def - INFO - 接口测试成功，结果和返回值已写入 excel 
+2022-07-23 07:51:49,498 - MyDB - INFO - 准备执行sql：DELETE FROM guest.sign_event where id="11";
+2022-07-23 07:51:49,498 - MyDB - INFO - sql执行成功
+2022-07-23 07:51:49,498 - ConfigHttp - INFO - ------------------- TestCase Start --------------------
+2022-07-23 07:51:49,498 - ConfigHttp - INFO - 请求方式：get
+2022-07-23 07:51:49,498 - ConfigHttp - INFO - 请求的url：http://127.0.0.1:8000/api/get_event_list/
+2022-07-23 07:51:49,498 - ConfigHttp - INFO - 请求的json参数：{'eid': '3'}
+2022-07-23 07:51:49,498 - ConfigHttp - INFO - 用例 test_get_event_list_by_id_ok 请求成功。
+2022-07-23 07:51:49,498 - ConfigHttp - INFO - ------------------- TestCase test_get_event_list_by_id_ok End --------------------
+2022-07-23 07:51:49,529 - common_def - INFO - 接口测试成功，结果和返回值已写入 excel 
+2022-07-23 07:51:49,529 - ConfigHttp - INFO - ------------------- TestCase Start --------------------
+2022-07-23 07:51:49,529 - ConfigHttp - INFO - 请求方式：post
+2022-07-23 07:51:49,529 - ConfigHttp - INFO - 请求的url：http://127.0.0.1:8000/api/add_guest/
+2022-07-23 07:51:49,529 - ConfigHttp - INFO - 请求的json参数：{'eid': '33', 'realname': '不三不四', 'phone': '15622334455', 'email': 'n3n4@mail.com'}
+2022-07-23 07:51:49,544 - ConfigHttp - INFO - 用例 test_add_guest_eid_not_exist 请求成功。
+2022-07-23 07:51:49,544 - ConfigHttp - INFO - ------------------- TestCase test_add_guest_eid_not_exist End --------------------
+2022-07-23 07:51:49,576 - common_def - INFO - 接口测试成功，结果和返回值已写入 excel 
+2022-07-23 07:51:49,576 - ConfigHttp - INFO - ------------------- TestCase Start --------------------
+2022-07-23 07:51:49,576 - ConfigHttp - INFO - 请求方式：post
+2022-07-23 07:51:49,576 - ConfigHttp - INFO - 请求的url：http://127.0.0.1:8000/api/add_guest/
+2022-07-23 07:51:49,576 - ConfigHttp - INFO - 请求的json参数：{'eid': '12', 'realname': '不三不四', 'phone': '15622334455', 'email': 'n3n4@mail.com'}
+2022-07-23 07:51:49,576 - MyDB - INFO - 准备执行sql：INSERT INTO `guest`.`sign_event`(`id`, `name`, `limit`, `status`, `address`, `start_time`) VALUES (12, '大烧卖发布会', 500, 1, '早餐基地', '2024-07-21 04:48:12');
+2022-07-23 07:51:49,576 - MyDB - INFO - sql执行成功
+2022-07-23 07:51:49,591 - ConfigHttp - INFO - 用例 test_add_guest_ok 请求成功。
+2022-07-23 07:51:49,591 - ConfigHttp - INFO - ------------------- TestCase test_add_guest_ok End --------------------
+2022-07-23 07:51:49,623 - common_def - INFO - 接口测试成功，结果和返回值已写入 excel 
+2022-07-23 07:51:49,623 - MyDB - INFO - 准备执行sql：DELETE FROM guest.sign_guest where event_id='12' and phone='15622334455';
+2022-07-23 07:51:49,623 - MyDB - INFO - sql执行成功
+2022-07-23 07:51:49,623 - MyDB - INFO - 准备执行sql：DELETE FROM guest.sign_event where id="12";
+2022-07-23 07:51:49,623 - MyDB - INFO - sql执行成功
+2022-07-23 07:51:49,623 - ConfigHttp - INFO - ------------------- TestCase Start --------------------
+2022-07-23 07:51:49,623 - ConfigHttp - INFO - 请求方式：get
+2022-07-23 07:51:49,623 - ConfigHttp - INFO - 请求的url：http://127.0.0.1:8000/api/get_guest_list/
+2022-07-23 07:51:49,623 - ConfigHttp - INFO - 请求的json参数：{'eid': '4', 'phone': ''}
+2022-07-23 07:51:49,654 - ConfigHttp - INFO - 用例 test_get_guest_list_by_eid_ok 请求成功。
+2022-07-23 07:51:49,654 - ConfigHttp - INFO - ------------------- TestCase test_get_guest_list_by_eid_ok End --------------------
+2022-07-23 07:51:49,685 - common_def - INFO - 接口测试成功，结果和返回值已写入 excel 
+2022-07-23 07:51:49,685 - ConfigHttp - INFO - ------------------- TestCase Start --------------------
+2022-07-23 07:51:49,685 - ConfigHttp - INFO - 请求方式：post
+2022-07-23 07:51:49,685 - ConfigHttp - INFO - 请求的url：http://127.0.0.1:8000/api/user_sign/
+2022-07-23 07:51:49,685 - ConfigHttp - INFO - 请求的json参数：{'eid': '1', 'phone': '18321110101'}
+2022-07-23 07:51:49,701 - ConfigHttp - INFO - 用例 test_user_sign_eid_disabled 请求成功。
+2022-07-23 07:51:49,701 - ConfigHttp - INFO - ------------------- TestCase test_user_sign_eid_disabled End --------------------
+2022-07-23 07:51:49,748 - common_def - INFO - 接口测试成功，结果和返回值已写入 excel 
+2022-07-23 07:51:49,748 - ConfigHttp - INFO - ------------------- TestCase Start --------------------
+2022-07-23 07:51:49,748 - ConfigHttp - INFO - 请求方式：post
+2022-07-23 07:51:49,748 - ConfigHttp - INFO - 请求的url：http://127.0.0.1:8000/api/user_sign/
+2022-07-23 07:51:49,748 - ConfigHttp - INFO - 请求的json参数：{'eid': '5', 'phone': '18612345678'}
+2022-07-23 07:51:49,763 - ConfigHttp - INFO - 用例 test_user_sign_ok 请求成功。
+2022-07-23 07:51:49,763 - ConfigHttp - INFO - ------------------- TestCase test_user_sign_ok End --------------------
+2022-07-23 07:51:49,810 - common_def - INFO - 接口测试成功，结果和返回值已写入 excel 
+2022-07-23 07:51:49,810 - MyDB - INFO - 准备执行sql：UPDATE guest.sign_guest SET sign=0 WHERE event_id=5 AND phone='18612345678';
+2022-07-23 07:51:49,810 - MyDB - INFO - sql执行成功
+2022-07-23 07:51:49,857 - common_def - INFO - 关闭excel文件
+2022-07-23 07:51:49,857 - MyDB - INFO - Database connection closed.

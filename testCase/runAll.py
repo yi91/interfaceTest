@@ -6,6 +6,7 @@ from datetime import datetime
 from XTestRunner import HTMLTestRunner
 from common.read_config import ReadConfig
 rc = ReadConfig()
+
 # 创建 report_path
 proDir = os.path.dirname(os.path.dirname(__file__))
 report_path = proDir + "\\report\\%s\\" % str(datetime.now().strftime("%Y%m%d%H%M%S"))
