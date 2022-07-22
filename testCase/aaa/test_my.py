@@ -157,7 +157,8 @@ class AA(unittest.TestCase):
     def setUp(self) -> None:
         print('setUp：')
 
-    @data('用例1', '华为')
+    @data(*[['用例1', '小米'], ['用例2', '华为']])
+    @unpack
     def test_1(self, ppa):
         """
         used ddt test
@@ -192,3 +193,6 @@ if __name__ == '__main__':
     runner = HTMLTestRunner(fp)
     runner.run(suite)
     fp.close()
+
+
+
