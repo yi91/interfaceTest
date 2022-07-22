@@ -1,0 +1,25 @@
+2022-07-22 14:44:27,460 - MyDB - INFO - Connect DB successfully!
+2022-07-22 14:44:28,381 - common_def - INFO - 打开excel，准备开始测试
+2022-07-22 14:44:28,563 - common_def - INFO - 读取用例excel成功
+2022-07-22 14:44:28,564 - ConfigHttp - INFO - ------------------- TestCase Start --------------------
+2022-07-22 14:44:28,565 - ConfigHttp - INFO - 请求方式：post
+2022-07-22 14:44:28,565 - ConfigHttp - INFO - 请求的url：http://127.0.0.1:8000/api/add_guest/
+2022-07-22 14:44:28,565 - ConfigHttp - INFO - 请求的json参数：{'eid': '33', 'realname': '不三不四', 'phone': '15622334455', 'email': 'n3n4@mail.com'}
+2022-07-22 14:44:28,594 - ConfigHttp - INFO - 用例 test_add_guest_eid_not_exist 请求成功。
+2022-07-22 14:44:28,594 - ConfigHttp - INFO - ------------------- TestCase test_add_guest_eid_not_exist End --------------------
+2022-07-22 14:44:28,631 - common_def - INFO - 接口测试成功，结果和返回值已写入 excel 
+2022-07-22 14:44:28,632 - ConfigHttp - INFO - ------------------- TestCase Start --------------------
+2022-07-22 14:44:28,632 - ConfigHttp - INFO - 请求方式：post
+2022-07-22 14:44:28,632 - ConfigHttp - INFO - 请求的url：http://127.0.0.1:8000/api/add_guest/
+2022-07-22 14:44:28,632 - ConfigHttp - INFO - 请求的json参数：{'eid': '12', 'realname': '不三不四', 'phone': '15622334455', 'email': 'n3n4@mail.com'}
+2022-07-22 14:44:28,632 - MyDB - INFO - 准备执行sql：INSERT INTO `guest`.`sign_event`(`id`, `name`, `limit`, `status`, `address`, `start_time`) VALUES (12, '大烧卖发布会', 500, 1, '早餐基地', '2024-07-21 04:48:12');
+2022-07-22 14:44:28,650 - MyDB - INFO - sql执行成功
+2022-07-22 14:44:28,690 - ConfigHttp - INFO - 用例 test_add_guest_ok 请求成功。
+2022-07-22 14:44:28,690 - ConfigHttp - INFO - ------------------- TestCase test_add_guest_ok End --------------------
+2022-07-22 14:44:28,734 - common_def - INFO - 接口测试成功，结果和返回值已写入 excel 
+2022-07-22 14:44:28,734 - MyDB - INFO - 准备执行sql：DELETE FROM guest.sign_guest where event_id='12' and phone='15622334455';
+2022-07-22 14:44:28,749 - MyDB - INFO - sql执行成功
+2022-07-22 14:44:28,750 - MyDB - INFO - 准备执行sql：DELETE FROM guest.sign_event where id="12";
+2022-07-22 14:44:28,780 - MyDB - INFO - sql执行成功
+2022-07-22 14:44:28,853 - common_def - INFO - excel文件已关闭
+2022-07-22 14:44:28,854 - MyDB - INFO - Database connection closed.

@@ -31,12 +31,13 @@ class MyDB:
         # 先执行 db.ping(reconnect=True)，可以保证连接丢失时自动重连
         self.db.ping(reconnect=True)
         try:
+            logger.info('准备执行sql：{}'.format(sql))
             # 使用 execute()方法执行SQL，insert返回结果是dic类型的cursor，delete的返回值是执行结果的条数
             self.cursor.execute(sql)
             # 手动提交执行
             self.db.commit()
             # 打印sql时，必须用format，否则logging报错
-            logger.info('sql执行成功 {}'.format(sql))
+            logger.info('sql执行成功')
         except Exception as e:
             logger.error('sql执行失败，请检查 \n %r' % e)
         finally:
@@ -47,12 +48,14 @@ class MyDB:
     def get_all(cursor):
         """ 以list形式返回select语句执行完的结果，每行结果以dic形式当作list的元素 """
         value = cursor.fetchall()
+        logger.info('cursor查询到的所有数据：', value)
         return value
 
     @staticmethod
     def get_one(cursor):
         """ 使用 fetchone() 方法获取单条数据 """
         value = cursor.fetchone()
+        logger.info('cursor查询到的单条数据：', value)
         return value
 
     def close_db(self):

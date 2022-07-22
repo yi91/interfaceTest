@@ -1,25 +1,34 @@
+import json
 import unittest
-import paramunittest
-from common import common_def as cc
+from ddt import ddt, data, unpack
+from common import common_def as cd
 from common.config_http import ConfigHttp
-
+from common.config_db import MyDB
 
 ch = ConfigHttp()
-case_list = cc.get_xlsx('case_guest.xlsx')
+db = MyDB()
+app, wb, sheet = cd.open_excel('case_guest.xlsx')
+case_list = cd.get_xlsx(sheet)
 
-
-@paramunittest.parametrized(*case_list)
+@ddt
 class TestAllCase(unittest.TestCase):
     """ 测试 api_django_rest 的 users 接口 """
-    def setParameters(self, case_name, method, header, url, data, is_run, result,
-                      response, msg, insert_sql, del_sql):
-        """ 方法名必须是setParameters """
-        # setParameters少写了excel表格前两列参数，因为get_xlsx方法已经过滤掉了前两列
+
+    @classmethod
+    def tearDownClass(cls):
+        # 所有用例执行完就关闭excel
+        cd.close_excel(app, wb)
+        # 所有用例执行完，关闭数据库连接
+        db.close_db()
+
+    @data(*case_list)
+    @unpack
+    def test_all_case(self, case_name, method, header, url, datas, is_run, result, response, msg, insert_sql, del_sql):
         self.case_name = case_name
         self.method = ch.set_method(method)
         self.header = ch.set_headers(header)
         self.url = ch.set_url(url)
-        self.params = ch.set_data(data)
+        self.params = ch.set_data(datas)
         self.is_run = is_run
         self.result = result
         self.resp = response
@@ -27,7 +36,13 @@ class TestAllCase(unittest.TestCase):
         self.insert_sql = insert_sql
         self.del_sql = del_sql
 
-    def test_all_case(self):
+        # 先执行数据初始化操作
+        if self.insert_sql is not None:
+            for sql in self.insert_sql.strip().split(';'):
+                # split分割的最后一个元素是None
+                if sql != '' and not sql.isspace():
+                    db.execute_sql(sql + ';')
+        # 开始执行测试
         self.r = None
         if self.method == 'get':
             self.r = ch.get(self.case_name)
@@ -35,9 +50,10 @@ class TestAllCase(unittest.TestCase):
             if self.header is None or ('multipart/form-data' in self.header):
                 self.r = ch.post(self.case_name)
             elif 'application/json' in self.header:
-                self.r = ch.post_json(self.case_name)
+                ch.data = json.dumps(self.params)
+                self.r = ch.post(self.case_name)
             else:
-                # 待完善，还有问题
+                # 发文件的待完善
                 self.r = ch.post_with_file(self.case_name)
         elif self.method == 'dubbo':
             self.r = ch.dubbo(self.case_name)
@@ -46,9 +62,16 @@ class TestAllCase(unittest.TestCase):
             self.r = ch.send_request(self.case_name)
 
         # 测试结束，必须在断言之前将结果写入excel，因为断言失败不会再继续执行后面的代码；或者放在teardown里面也行
-        cc.write_resp_to_excel('case_guest.xlsx', self.case_name, self.r, self.msg)
+        cd.write_resp_to_excel(sheet, self.case_name, self.r, self.msg)
 
-        # 请求结束，开始断言并写入结果到excel
+        # 将数据库测试数据还原
+        if self.del_sql is not None:
+            for sql in self.del_sql.strip().split(';'):
+                # split分割的最后一个元素是None
+                if sql != '' and not sql.isspace():
+                    db.execute_sql(sql + ';')
+
+        # 请求结束，开始断言
         if self.r is None:
             self.assertEqual(1, 2)
         else:

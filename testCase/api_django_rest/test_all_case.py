@@ -2,9 +2,11 @@ import unittest
 import paramunittest
 from common import common_def as cc
 from common.config_http import ConfigHttp
+from common.config_db import MyDB
 
 
 ch = ConfigHttp()
+db = MyDB()
 case_list = cc.get_xlsx('case_django_rest.xlsx')
 
 
@@ -26,6 +28,27 @@ class TestAllCase(unittest.TestCase):
         self.msg = msg
         self.insert_sql = insert_sql
         self.del_sql = del_sql
+
+    def setUp(self):
+        # 先执行数据初始化操作
+        if self.insert_sql is not None:
+            for sql in self.insert_sql.strip().split(';'):
+                # split分割的最后一个元素是None
+                if sql != '' and not sql.isspace():
+                    db.execute_sql(sql + ';')
+
+    def tearDown(self):
+        # 将数据库测试数据还原
+        if self.del_sql is not None:
+            for sql in self.del_sql.strip().split(';'):
+                # split分割的最后一个元素是None
+                if sql != '' and not sql.isspace():
+                    db.execute_sql(sql + ';')
+
+    @classmethod
+    def tearDownClass(cls):
+        # 所有用例执行完，关闭数据库连接
+        db.close_db()
 
     def test_all_case(self):
         self.r = None

@@ -15,7 +15,7 @@ class TestAllCase(unittest.TestCase):
 
     @data(*case_list)
     @unpack
-    def test_all_case(self, name, case_name, method, header, url, data, is_run, result,
+    def test_all_case(self, case_name, method, header, url, data, is_run, result,
                       response, msg, insert_sql, del_sql):
         ch.url = ch.set_url(url)
         ch.headers = ch.set_headers(header)

@@ -30,6 +30,7 @@ class ConfigHttp:
         return self.url
 
     def set_method(self, method):
+        logger.info('------------------- TestCase Start --------------------')
         self.method = method.lower()
         logger.info('请求方式：%s' % self.method)
         return self.method
@@ -50,67 +51,51 @@ class ConfigHttp:
             logger.info('请求头：%s' % self.headers)
         return self.headers
 
-    # 将从文件得到的string类型data转成json对象
+    # 将从文件得到的string类型data转成python对象
     def set_data(self, data):
         if data is not None:
             try:
                 self.data = json.loads(data)
             except Exception:
+                # 如果遇到特殊字符，如单引号就用下面的方式转化
                 self.data = eval(data)
             logger.info('请求的json参数：%s' % self.data)
         return self.data
 
-    def set_file(self, file):
-        if os.path.isfile(file):
-            self.file = file
+    def set_file(self, file_path):
+        if os.path.isfile(file_path):
+            self.file = {'file': open(file_path, 'rb')}
             logger.info('文件校验成功')
         return self.file
 
     def get(self, case_name):
         """ 封装get请求 """
         try:
-            response = requests.get(self.url, headers=self.headers, params=self.data,
-                                    timeout=float(self.timeout))
+            response = requests.get(self.url, headers=self.headers, params=self.data, timeout=float(self.timeout))
             logger.info('用例 %s 请求成功。' % case_name)
+            logger.info('------------------- TestCase %s End --------------------' % case_name)
             return response
         except Exception as e:
             logger.error('用例 %s 请求错误，请检查参数' % case_name, e)
-            return e
 
     def post(self, case_name):
         """ 封装 post请求 """
         try:
             response = requests.post(self.url, headers=self.headers, data=self.data, timeout=float(self.timeout))
             logger.info('用例 %s 请求成功。' % case_name)
+            logger.info('------------------- TestCase %s End --------------------' % case_name)
             return response
         except Exception as e:
-            logger.error('用例 %s 请求错误' % case_name, e)
-            return e
+            logger.error('用例 %s 请求错误，请检查参数' % case_name, e)
 
-    def post_json(self, case_name):
-        """ 封装发送json格式数据 post请求 """
+    def post_with_file(self, case_name):
+        """ 封装上传文件的 post 请求 """
         try:
-            response = requests.post(self.url, headers=self.headers, json=self.data, timeout=float(self.timeout))
+            response = requests.post(self.url, headers=self.headers, files=self.file, timeout=float(self.timeout))
             logger.info('用例 %s 请求成功。' % case_name)
             return response
         except Exception as e:
             logger.error('用例 %s 请求错误' % case_name, e)
-            return e
-
-    def post_with_file(self, case_name):
-        """ 封装上传文件的 post 请求 """
-        if self.file != '':
-            try:
-                with open(self.file, 'rb') as fp:
-                    response = requests.post(self.url, headers=self.headers, data=self.data, files=fp,
-                                             timeout=float(self.timeout))
-                logger.info('用例 %s 请求成功。' % case_name)
-                return response
-            except Exception as e:
-                logger.error('用例 %s 请求错误' % case_name, e)
-                return e
-        else:
-            self.post(case_name)
 
     def send_request(self, case_name):
         """ 特殊请求方式，如 put， del等"""

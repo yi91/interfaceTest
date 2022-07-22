@@ -7,11 +7,11 @@ from email.mime.text import MIMEText
 from email.mime.image import MIMEImage
 from datetime import datetime
 from common.read_config import ReadConfig
-from common.logger import MyLog
+from common.logger import Log
 
 rc = ReadConfig()
 rp = rc.get_report()
-logger = MyLog.logger('Email')
+logger = Log('Email').get_logger()
 pro_dir = os.path.dirname(os.path.dirname(__file__))
 
 
