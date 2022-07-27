@@ -1,7 +1,6 @@
 # coding:utf-8
 
 import logging
-import threading
 from common.read_config import ReadConfig
 
 

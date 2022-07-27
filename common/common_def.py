@@ -1,7 +1,6 @@
 # coding:utf-8
 import os
 import json
-import base64
 import re
 import time
 import requests

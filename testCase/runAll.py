@@ -5,6 +5,7 @@ import unittest
 from datetime import datetime
 from XTestRunner import HTMLTestRunner
 from common.read_config import ReadConfig
+
 rc = ReadConfig()
 
 # 创建 report_path
@@ -26,7 +27,6 @@ class AllTest:
 
 
 """
-
             # send test report by email
             if on_off == 'on':
                 self.email.send_email()
@@ -36,7 +36,6 @@ class AllTest:
             else:
                 logger.info("Unknow state.")
 """
-
 
 if __name__ == '__main__':
     # obj = AllTest()

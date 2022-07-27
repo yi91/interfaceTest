@@ -14,7 +14,7 @@ logger = Log('ConfigHttp').get_logger()
 class ConfigHttp:
 
     # host = rc.get_http("base_url")
-    host = rc.get_http("guest_base_url")
+
     timeout = rc.get_http("timeout")
 
     def __init__(self):
@@ -24,8 +24,9 @@ class ConfigHttp:
         self.data = None
         self.file = None
 
-    def set_url(self, url):
-        self.url = self.host + url
+    def set_url(self, url, base_url):
+        host = rc.get_http(base_url)
+        self.url = host + url
         logger.info('请求的url：%s' % self.url)
         return self.url
 

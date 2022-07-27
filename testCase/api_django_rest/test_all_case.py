@@ -1,3 +1,4 @@
+import json
 import unittest
 import paramunittest
 from common import common_def as cc
@@ -20,7 +21,7 @@ class TestAllCase(unittest.TestCase):
         self.case_name = case_name
         self.method = ch.set_method(method)
         self.header = ch.set_headers(header)
-        self.url = ch.set_url(url)
+        self.url = ch.set_url(url, 'django_rest_base_url')
         self.params = ch.set_data(data)
         self.is_run = is_run
         self.result = result
@@ -58,7 +59,8 @@ class TestAllCase(unittest.TestCase):
             if self.header is None or ('multipart/form-data' in self.header):
                 self.r = ch.post(self.case_name)
             elif 'application/json' in self.header:
-                self.r = ch.post_json(self.case_name)
+                ch.data = json.dumps(self.params)
+                self.r = ch.post(self.case_name)
             else:
                 # 待完善，还有问题
                 self.r = ch.post_with_file(self.case_name)

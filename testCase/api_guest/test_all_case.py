@@ -12,7 +12,7 @@ case_list = cd.get_xlsx(sheet)
 
 @ddt
 class TestAllCase(unittest.TestCase):
-    """ 测试 api_django_rest 的 users 接口 """
+    """ 测试 api_guest 的所有接口 """
 
     @classmethod
     def tearDownClass(cls):
@@ -27,7 +27,7 @@ class TestAllCase(unittest.TestCase):
         self.case_name = case_name
         self.method = ch.set_method(method)
         self.header = ch.set_headers(header)
-        self.url = ch.set_url(url)
+        self.url = ch.set_url(url, 'guest_base_url')
         self.params = ch.set_data(datas)
         self.is_run = is_run
         self.result = result
